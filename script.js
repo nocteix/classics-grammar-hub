@@ -37,30 +37,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     allNotes = [...latinNotes, ...greekNotes];
   } catch (error) {
-    console.warn('Could not fetch JSON files, initializing with fallback sample data:', error);
-    allNotes = [
-      {
-        id: 'lat-syntax-1',
-        language: 'latin',
-        type: 'syntax',
-        title: 'Ablative Absolute',
-        description: 'A noun and participle in the ablative case functioning independently from the main clause.',
-        formula: 'Noun (Abl.) + Participle (Abl.)',
-        examples: [{ text: 'Urbe capta, duces discesserunt.', translation: 'The city having been captured, the leaders departed.' }],
-        tags: ['ablative', 'participle', 'syntax']
-      },
-      {
-        id: 'grk-syntax-2',
-        language: 'greek',
-        type: 'syntax',
-        title: 'Genitive Absolute',
-        description: 'Equivalent to the Latin Ablative Absolute; features a noun and participle in the genitive case.',
-        formula: 'Noun (Gen.) + Participle (Gen.)',
-        examples: [{ text: 'τοῦ βασιλέως λέγοντος', translation: 'While the king was speaking' }],
-        tags: ['genitive', 'participle', 'syntax']
-      }
-    ];
-  }
+      console.warn('Could not fetch JSON files:', error);
+      allNotes = [];
+    }
 
   initFuse(allNotes);
   renderTagFilters();
