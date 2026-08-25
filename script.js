@@ -381,9 +381,12 @@ function highlightFuseText(text, matches) {
 
 function highlightRegexText(text, query) {
   if (!query || !text) return text;
-  const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  
+  const normalizedText = text.normalize('NFC');
+  const escapedQuery = query.normalize('NFC').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  
   const regex = new RegExp(`(${escapedQuery})`, 'gi');
-  return text.replace(regex, '<mark class="highlight">$1</mark>');
+  return normalizedText.replace(regex, '<mark class="highlight">$1</mark>');
 }
 
 function updateButtonCounts(queryMatches) {
