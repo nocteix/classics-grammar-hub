@@ -17,7 +17,7 @@
       }
     ],
     "mnemonic": "Different subject = Accusative + Infinitive; Same subject = Nominative (omitted).",
-    "tags": ["greek", "syntax", "accusative", "infinitive", "indirect-statement"]
+    "tags": ["accusative", "infinitive", "indirect-statement"]
   },
   {
     "id": "grk-syntax-subj-purpose",
@@ -37,7 +37,7 @@
       }
     ],
     "mnemonic": "ἵνα/ὅπως/ὡς + Subjunctive (Primary) or Optative (Secondary). Negated with μή.",
-    "tags": ["greek", "syntax", "purpose", "subjunctive", "optative", "ina"]
+    "tags": ["purpose", "subjunctive", "optative"]
   },
   {
     "id": "grk-syntax-articular-inf",
@@ -57,7 +57,7 @@
       }
     ],
     "mnemonic": "Neuter article converts an entire verb clause into a declinable noun phrase.",
-    "tags": ["greek", "syntax", "infinitive", "article", "articular"]
+    "tags": ["infinitive", "article", "articular"]
   },
   {
     "id": "grk-syntax-dative-means",
@@ -77,7 +77,7 @@
       }
     ],
     "mnemonic": "No preposition needed for tangible tools or means in the Dative.",
-    "tags": ["greek", "syntax", "dative", "means", "instrument"]
+    "tags": ["dative", "means", "instrument"]
   },
   {
     "id": "grk-syntax-conditional-contrary",
@@ -97,6 +97,6 @@
       }
     ],
     "mnemonic": "Past Contrary = εἰ + Aorist Indicative ... Aorist Indicative + ἄν.",
-    "tags": ["greek", "syntax", "conditionals", "indicative", "an", "aorist"]
+    "tags": ["conditionals", "indicative", "aorist"]
   }
 ]
