@@ -11,18 +11,16 @@ const filterState = {
 };
 
 const GREEK_DIACRITICS = [
-  // Smooth breathing
-  'ἀ', 'ἐ', 'ἠ', 'ἰ', 'ὀ', 'ὐ', 'ὠ',
-  // Rough breathing
-  'ἁ', 'ἑ', 'ἡ', 'ἱ', 'ὁ', 'ὑ', 'ὡ',
-  // Acute accents
-  'ά', 'έ', 'ή', 'ί', 'ό', 'ύ', 'ώ',
-  // Grave accents
-  'ὰ', 'ὲ', 'ὴ', 'ὶ', 'ὸ', 'ὺ', 'ὼ',
-  // Circumflex
-  'ᾶ', 'ῆ', 'ῖ', 'ῦ', 'ῶ',
-  // Iota subscripts
-  'ᾳ', 'ῃ', 'ῳ'
+  // Acute Vowels
+  '\u03AC', '\u03AD', '\u03AE', '\u03AF', '\u03CC', '\u03CD', '\u03CE',
+  // Polytonic Grave Vowels
+  '\u1F70', '\u1F72', '\u1F74', '\u1F76', '\u1F78', '\u1F7A', '\u1F7C',
+  // Circumflex Vowels
+  '\u1FB6', '\u1FC6', '\u1FD6', '\u1FE6', '\u1FF6',
+  // Rough Breathing
+  '\u1F01', '\u1F11', '\u1F21', '\u1F31', '\u1F41', '\u1F51', '\u1F61',
+  // Iota Subscript Vowels
+  '\u1FB3', '\u1FC3', '\u1FF3'
 ];
 
 document.addEventListener('DOMContentLoaded', async () => {
