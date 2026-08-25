@@ -1,0 +1,36 @@
+[
+  {
+    "id": "lat-prep-ab",
+    "type": "preposition",
+    "language": "latin",
+    "title": "ā / ab (+ Ablative)",
+    "casesGoverned": ["Ablative"],
+    "meanings": [
+      { "sense": "Separation / Motion away from", "example": "ab urbe", "translation": "from the city" },
+      { "sense": "Personal Agent (with passive verb)", "example": "a Caesare victus", "translation": "conquered by Caesar" }
+    ],
+    "tags": ["latin", "preposition", "ablative", "agent"]
+  },
+  {
+    "id": "grk-syntax-purpose",
+    "type": "syntax_rule",
+    "language": "greek",
+    "title": "Purpose Clauses (ἵνα, ὅπως, ὡς)",
+    "rule": "Introduced by ἵνα, ὅπως, or ὡς. Uses the Subjunctive after primary tenses and Optative after secondary (past) tenses.",
+    "negation": "μή",
+    "examples": [
+      { "text": "ταῦτα γράφω ἵνα μανθάνητε.", "translation": "I write these things so that you may learn." }
+    ],
+    "tags": ["greek", "syntax", "subjunctive", "optative", "purpose"]
+  },
+  {
+    "id": "lat-verb-utor",
+    "type": "verb_construction",
+    "language": "latin",
+    "title": "Special Deponent Verbs + Ablative",
+    "verbs": ["ūtor", "fruor", "fungor", "potior", "vescor"],
+    "description": "These five deponent verbs take their direct object in the Ablative case rather than the Accusative.",
+    "mnemonic": "PUFFV (Potior, Utor, Fruor, Fungor, Vescor)",
+    "tags": ["latin", "verbs", "ablative", "deponent"]
+  }
+]

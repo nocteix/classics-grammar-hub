@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classics Grammar Hub</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Fuse.js Fuzzy Search Library -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.basic.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Classics Grammar Reference</h1>
+    <div class="controls-wrapper">
+      <input type="text" id="searchInput" placeholder="Search cases, syntax, prepositions, or tags...">
+
+      <div class="filter-group">
+        <span class="filter-label">Language:</span>
+        <button class="lang-btn active" data-language="all">All</button>
+        <button class="lang-btn" data-language="latin">Latin</button>
+        <button class="lang-btn" data-language="greek">Ancient Greek</button>
+      </div>
+
+      <div class="filter-group">
+        <span class="filter-label">Category:</span>
+        <button class="cat-btn active" data-category="all">All Categories</button>
+        <button class="cat-btn" data-category="syntax_rule">Syntax</button>
+        <button class="cat-btn" data-category="preposition">Prepositions</button>
+        <button class="cat-btn" data-category="paradigm">Paradigms</button>
+        <button class="cat-btn" data-category="verb_construction">Verbs</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="content">
+    <div id="notesContainer" class="notes-grid">
+      <!-- Dynamic cards render here -->
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
