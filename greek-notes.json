@@ -1,47 +1,102 @@
 [
   {
-    "id": "grk-syntax-gen-abs",
+    "id": "grk-syntax-acc-inf",
     "type": "syntax_rule",
     "language": "greek",
-    "title": "Genitive Absolute (Γενικὴ Ἀπόλυτος)",
-    "description": "Applies when a noun and participle stand in the Genitive case to state background circumstances. Used when the participle's subject does not appear in the main clause.",
-    "formula": "Noun/Pronoun (Genitive) + Participle (Genitive)",
-    "negation": "μή (for hypothetical/conditional clauses) or οὐ (for factual clauses)",
+    "title": "Indirect Statement with Infinitive",
+    "description": "Used after verbs of saying, thinking, or believing (e.g., φημί, νομίζω). The subject of the infinitive shifts to the Accusative case unless it is identical to the main subject, in which case it is Nominative and usually omitted.",
+    "formula": "Verb of Saying/Thinking + Accusative (Subject) + Infinitive",
     "examples": [
       {
-        "text": "τοῦ Σωκράτους λέγοντος, οἱ μαθηταὶ ἤκουον.",
-        "translation": "While Socrates was speaking, the disciples were listening."
+        "text": "νομίζει τὸν στρατηγὸν σοφὸν εἶναι.",
+        "translation": "He thinks that the general is wise."
       },
       {
-        "text": "Κύρου βασιλεύοντος, πολλὰ ἀγαθὰ ἐγένετο.",
-        "translation": "When Cyrus was reigning, many good things happened."
+        "text": "φησὶν αὐτὸς γράφειν.",
+        "translation": "He says that he himself is writing."
       }
     ],
-    "tags": ["greek", "syntax", "genitive", "participle", "absolute"]
+    "mnemonic": "Different subject = Accusative + Infinitive; Same subject = Nominative (omitted).",
+    "tags": ["greek", "syntax", "accusative", "infinitive", "indirect-statement"]
   },
   {
-    "id": "grk-prep-three-cases",
-    "type": "preposition",
+    "id": "grk-syntax-subj-purpose",
+    "type": "syntax_rule",
     "language": "greek",
-    "title": "Three-Case Preposition: παρά",
-    "description": "Meaning shifts depending on whether it governs Genitive (source), Dative (location), or Accusative (motion/comparison).",
-    "meanings": [
+    "title": "Purpose Clauses (ἵνα, ὅπως, ὡς)",
+    "description": "Subordinate clause expressing intention. Introduced by ἵνα, ὅπως, or ὡς. Uses the Subjunctive mood after primary tenses and Optative (or Subjunctive) after secondary (past) tenses.",
+    "formula": "ἵνα / ὅπως / ὡς + Subjunctive (or Optative) [Negation: μή]",
+    "examples": [
       {
-        "sense": "+ Genitive (from beside / from)",
-        "example": "παρὰ τοῦ βασιλέως",
-        "translation": "from the king"
+        "text": "ταῦτα λέγω ἵνα τὴν ἀλήθειαν μάθητε.",
+        "translation": "I say these things so that you may learn the truth."
       },
       {
-        "sense": "+ Dative (beside / at the house of)",
-        "example": "παρὰ τῷ βασιλεῖ",
-        "translation": "with / beside the king"
-      },
-      {
-        "sense": "+ Accusative (to the side of / along / contrary to)",
-        "example": "παρὰ τὸν νόμον",
-        "translation": "contrary to the law"
+        "text": "ἔφυγον ἵνα μὴ ἀποθάνοιεν.",
+        "translation": "They fled lest they should die (so that they would not die)."
       }
     ],
-    "tags": ["greek", "preposition", "genitive", "dative", "accusative"]
+    "mnemonic": "ἵνα/ὅπως/ὡς + Subjunctive (Primary) or Optative (Secondary). Negated with μή.",
+    "tags": ["greek", "syntax", "purpose", "subjunctive", "optative", "ina"]
+  },
+  {
+    "id": "grk-syntax-articular-inf",
+    "type": "syntax_rule",
+    "language": "greek",
+    "title": "Articular Infinitive",
+    "description": "The neuter definite article (τό, τοῦ, τῷ) combined with an infinitive allows any verb phrase to function as a noun in any grammatical case, including taking prepositions.",
+    "formula": "Neuter Article (τό / τοῦ / τῷ) + Infinitive Phrase",
+    "examples": [
+      {
+        "text": "τὸ εὖ λέγειν χαλεπόν ἐστιν.",
+        "translation": "Speaking well is difficult."
+      },
+      {
+        "text": "διὰ τὸ μὴ παρεῖναι τὸν φίλον...",
+        "translation": "Because of the friend not being present..."
+      }
+    ],
+    "mnemonic": "Neuter article converts an entire verb clause into a declinable noun phrase.",
+    "tags": ["greek", "syntax", "infinitive", "article", "articular"]
+  },
+  {
+    "id": "grk-syntax-dative-means",
+    "type": "syntax_rule",
+    "language": "greek",
+    "title": "Dative of Means / Instrument (Δοτικὴ Ὀργανική)",
+    "description": "The Dative case without a preposition expresses the instrument or means by which an action is performed.",
+    "formula": "Noun (Dative without preposition)",
+    "examples": [
+      {
+        "text": "τοῖς ὀφθαλμοῖς ὁρῶμεν.",
+        "translation": "We see with/by means of our eyes."
+      },
+      {
+        "text": "ἔβαλον αὐτὸν λίθοις.",
+        "translation": "They pelted him with stones."
+      }
+    ],
+    "mnemonic": "No preposition needed for tangible tools or means in the Dative.",
+    "tags": ["greek", "syntax", "dative", "means", "instrument"]
+  },
+  {
+    "id": "grk-syntax-conditional-contrary",
+    "type": "syntax_rule",
+    "language": "greek",
+    "title": "Past Contrary-to-Fact Condition",
+    "description": "Expresses an unfulfilled condition in past time. The protasis (if-clause) takes εἰ + Aorist Indicative; the apodosis (then-clause) takes Aorist Indicative + modal particle ἄν.",
+    "formula": "Protasis: εἰ + Aorist Indicative | Apodosis: Aorist Indicative + ἄν",
+    "examples": [
+      {
+        "text": "εἰ ταῦτα ἔπραξας, ἥμαρτες ἄν.",
+        "translation": "If you had done these things, you would have erred."
+      },
+      {
+        "text": "εἰ μὴ ἦλθον, οὐκ ἂν εἶδες αὐτούς.",
+        "translation": "If I had not come, you would not have seen them."
+      }
+    ],
+    "mnemonic": "Past Contrary = εἰ + Aorist Indicative ... Aorist Indicative + ἄν.",
+    "tags": ["greek", "syntax", "conditionals", "indicative", "an", "aorist"]
   }
 ]
