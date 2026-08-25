@@ -1,0 +1,47 @@
+[
+  {
+    "id": "grk-syntax-gen-abs",
+    "type": "syntax_rule",
+    "language": "greek",
+    "title": "Genitive Absolute (Γενικὴ Ἀπόλυτος)",
+    "description": "Applies when a noun and participle stand in the Genitive case to state background circumstances. Used when the participle's subject does not appear in the main clause.",
+    "formula": "Noun/Pronoun (Genitive) + Participle (Genitive)",
+    "negation": "μή (for hypothetical/conditional clauses) or οὐ (for factual clauses)",
+    "examples": [
+      {
+        "text": "τοῦ Σωκράτους λέγοντος, οἱ μαθηταὶ ἤκουον.",
+        "translation": "While Socrates was speaking, the disciples were listening."
+      },
+      {
+        "text": "Κύρου βασιλεύοντος, πολλὰ ἀγαθὰ ἐγένετο.",
+        "translation": "When Cyrus was reigning, many good things happened."
+      }
+    ],
+    "tags": ["greek", "syntax", "genitive", "participle", "absolute"]
+  },
+  {
+    "id": "grk-prep-three-cases",
+    "type": "preposition",
+    "language": "greek",
+    "title": "Three-Case Preposition: παρά",
+    "description": "Meaning shifts depending on whether it governs Genitive (source), Dative (location), or Accusative (motion/comparison).",
+    "meanings": [
+      {
+        "sense": "+ Genitive (from beside / from)",
+        "example": "παρὰ τοῦ βασιλέως",
+        "translation": "from the king"
+      },
+      {
+        "sense": "+ Dative (beside / at the house of)",
+        "example": "παρὰ τῷ βασιλεῖ",
+        "translation": "with / beside the king"
+      },
+      {
+        "sense": "+ Accusative (to the side of / along / contrary to)",
+        "example": "παρὰ τὸν νόμον",
+        "translation": "contrary to the law"
+      }
+    ],
+    "tags": ["greek", "preposition", "genitive", "dative", "accusative"]
+  }
+]
