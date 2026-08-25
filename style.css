@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 :root {
   --bg-color: #f8f9fa;
   --card-bg: #ffffff;
@@ -32,7 +34,6 @@ header h1 {
   font-size: 2rem;
 }
 
-/* Control Panel */
 .controls-wrapper {
   display: flex;
   flex-direction: column;
@@ -62,7 +63,6 @@ header h1 {
   border-color: var(--accent-color);
 }
 
-/* Greek Character Insertion Toolbar */
 .greek-toolbar {
   display: flex;
   flex-wrap: wrap;
@@ -77,6 +77,21 @@ header h1 {
   color: #cccccc;
   margin-right: 0.25rem;
   font-weight: bold;
+}
+
+.card.greek,
+.badge.greek,
+#searchGreekToolbar,
+#modalGreekToolbar,
+.greek-char-btn {
+  font-family: 'Gentium Book Plus', 'Palatino Linotype', 'Times New Roman', serif;
+}
+
+.card.greek h2,
+.card.greek .examples-list,
+.greek-char-btn {
+  font-size: 1.05em;
+  letter-spacing: 0.02em;
 }
 
 .modal-window .greek-toolbar-label {
