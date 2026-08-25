@@ -1,66 +1,102 @@
 [
   {
-    "id": "lat-syntax-abl-abs",
+    "id": "lat-syntax-ind-statement",
     "type": "syntax_rule",
     "language": "latin",
-    "title": "Ablative Absolute",
-    "description": "A subordinate clause construction grammatically detached from the main clause. It provides adverbial context such as time, cause, condition, or concession.",
-    "formula": "Noun/Pronoun (Ablative) + Participle (Ablative)",
+    "title": "Indirect Statement (Oratio Obliqua)",
+    "description": "Used after verbs of saying, thinking, knowing, or perceiving (head verbs). The subject of the clause shifts to the Accusative case, and the verb becomes an Infinitive.",
+    "formula": "Head Verb + Accusative (Subject) + Infinitive (Verb)",
     "examples": [
       {
-        "text": "Urbe capta, milites discesserunt.",
-        "translation": "The city having been captured (When the city was captured), the soldiers departed."
+        "text": "Dicit te esse bonum.",
+        "translation": "He says that you are good."
       },
       {
-        "text": "Caesare duce, nihil timemus.",
-        "translation": "Caesar being leader (With Caesar as leader), we fear nothing."
-      },
-      {
-        "text": "Sole oriente, naves solverunt.",
-        "translation": "As the sun was rising, they set sail."
+        "text": "Scio militem in urbe pugnavisse.",
+        "translation": "I know that the soldier fought in the city."
       }
     ],
-    "mnemonic": "Look for two ablatives in a row separated by commas near sentence starts.",
-    "tags": ["latin", "syntax", "ablative", "participle", "subordinate"]
+    "mnemonic": "Head verb triggers Subject Accusative + Verb Infinitive.",
+    "tags": ["latin", "syntax", "accusative", "infinitive", "head-verbs"]
   },
   {
-    "id": "lat-verb-deponent-ablative",
-    "type": "verb_construction",
+    "id": "lat-syntax-cum-clause",
+    "type": "syntax_rule",
     "language": "latin",
-    "title": "Special Deponent Verbs + Ablative",
-    "verbs": ["ūtor", "fruor", "fungor", "potior", "vescor"],
-    "description": "These five deponents take their direct complement in the Ablative case instead of the Accusative due to their original middle/reflexive meaning ('to benefit oneself with').",
-    "mnemonic": "PUFFV (Potior, Utor, Fruor, Fungor, Vescor)",
+    "title": "Cum Clauses",
+    "description": "Subordinate clauses introduced by 'cum'. Indicative denotes pure time ('when'). Subjunctive expresses circumstantial context ('when/while'), causal reason ('since'), or concessive contrast ('although').",
+    "formula": "Cum + Indicative (Temporal) OR Subjunctive (Circumstantial/Causal/Concessive)",
     "examples": [
       {
-        "text": "Glabrio gladio utitur.",
-        "translation": "Glabrio uses a sword (literally: 'serves himself with a sword')."
+        "text": "Cum haec dixisset, discessit.",
+        "translation": "When he had said these things, he departed."
       },
       {
-        "text": "Vita frugali fruitur.",
-        "translation": "She enjoys a frugal life."
+        "text": "Cum urbs parva sit, tamen fortiter defenditur.",
+        "translation": "Although the city is small, it is nevertheless bravely defended."
       }
     ],
-    "tags": ["latin", "verbs", "ablative", "deponent", "puffv"]
+    "mnemonic": "Cum + Subjunctive = When, Since, or Although (tamen points to 'although').",
+    "tags": ["latin", "syntax", "cum", "subjunctive", "subordinate"]
   },
   {
-    "id": "lat-prep-in-sub",
-    "type": "preposition",
+    "id": "lat-syntax-passive-periphrastic",
+    "type": "syntax_rule",
     "language": "latin",
-    "title": "Prepositions with Dual Cases (in, sub)",
-    "description": "Governing Accusative when indicating movement toward a target, or Ablative when indicating location, state, or position at rest.",
-    "meanings": [
+    "title": "Passive Periphrastic (Gerundive of Obligation)",
+    "description": "Expresses necessity or obligation using the Gerundive (-ndus, -nda, -ndum) combined with a form of 'esse'. The person performing the action takes the Dative case (Dative of Agent).",
+    "formula": "Gerundive + Form of Sum + Dative (Agent)",
+    "examples": [
       {
-        "sense": "Accusative: Motion into/onto",
-        "example": "in urbem ire",
-        "translation": "to go into the city"
+        "text": "Carthago delenda est.",
+        "translation": "Carthage must be destroyed."
       },
       {
-        "sense": "Ablative: Rest inside/upon",
-        "example": "in urbe esse",
-        "translation": "to be in the city"
+        "text": "Mihi haec epistula scribenda est.",
+        "translation": "This letter must be written by me (I must write this letter)."
       }
     ],
-    "tags": ["latin", "preposition", "accusative", "ablative", "motion"]
+    "mnemonic": "-ND- + sum = must/should; the agent is Dative.",
+    "tags": ["latin", "syntax", "gerundive", "dative", "obligation"]
+  },
+  {
+    "id": "lat-syntax-purpose-clause",
+    "type": "syntax_rule",
+    "language": "latin",
+    "title": "Purpose Clause (Final Clause)",
+    "description": "Subordinate clause indicating intent or purpose. Introduced by 'ut' (positive) or 'ne' (negative), taking a subjunctive verb. Never use an infinitive to express purpose in prose Latin.",
+    "formula": "Ut / Ne + Subjunctive Verb",
+    "examples": [
+      {
+        "text": "Venit ut te videat.",
+        "translation": "He comes so that he may see you (to see you)."
+      },
+      {
+        "text": "Pugnaverunt ne urbs caperetur.",
+        "translation": "They fought so that the city would not be captured."
+      }
+    ],
+    "mnemonic": "Ut = so that; Ne = lest / so that not.",
+    "tags": ["latin", "syntax", "purpose", "subjunctive", "ut", "ne"]
+  },
+  {
+    "id": "lat-syntax-dative-possession",
+    "type": "syntax_rule",
+    "language": "latin",
+    "title": "Dative of Possession",
+    "description": "Used with forms of 'esse' to express ownership. The item owned acts as the nominative subject, and the owner is put into the dative case.",
+    "formula": "Thing Possessed (Nominative) + Form of Sum + Owner (Dative)",
+    "examples": [
+      {
+        "text": "Est mihi liber.",
+        "translation": "There is to me a book (I have a book)."
+      },
+      {
+        "text": "Puellae multi libri sunt.",
+        "translation": "To the girl are many books (The girl has many books)."
+      }
+    ],
+    "mnemonic": "Literal: [Thing] exists to [Person] → Person has Thing.",
+    "tags": ["latin", "syntax", "dative", "possession", "sum"]
   }
 ]
