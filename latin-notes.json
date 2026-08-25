@@ -1,0 +1,66 @@
+[
+  {
+    "id": "lat-syntax-abl-abs",
+    "type": "syntax_rule",
+    "language": "latin",
+    "title": "Ablative Absolute",
+    "description": "A subordinate clause construction grammatically detached from the main clause. It provides adverbial context such as time, cause, condition, or concession.",
+    "formula": "Noun/Pronoun (Ablative) + Participle (Ablative)",
+    "examples": [
+      {
+        "text": "Urbe capta, milites discesserunt.",
+        "translation": "The city having been captured (When the city was captured), the soldiers departed."
+      },
+      {
+        "text": "Caesare duce, nihil timemus.",
+        "translation": "Caesar being leader (With Caesar as leader), we fear nothing."
+      },
+      {
+        "text": "Sole oriente, naves solverunt.",
+        "translation": "As the sun was rising, they set sail."
+      }
+    ],
+    "mnemonic": "Look for two ablatives in a row separated by commas near sentence starts.",
+    "tags": ["latin", "syntax", "ablative", "participle", "subordinate"]
+  },
+  {
+    "id": "lat-verb-deponent-ablative",
+    "type": "verb_construction",
+    "language": "latin",
+    "title": "Special Deponent Verbs + Ablative",
+    "verbs": ["ūtor", "fruor", "fungor", "potior", "vescor"],
+    "description": "These five deponents take their direct complement in the Ablative case instead of the Accusative due to their original middle/reflexive meaning ('to benefit oneself with').",
+    "mnemonic": "PUFFV (Potior, Utor, Fruor, Fungor, Vescor)",
+    "examples": [
+      {
+        "text": "Glabrio gladio utitur.",
+        "translation": "Glabrio uses a sword (literally: 'serves himself with a sword')."
+      },
+      {
+        "text": "Vita frugali fruitur.",
+        "translation": "She enjoys a frugal life."
+      }
+    ],
+    "tags": ["latin", "verbs", "ablative", "deponent", "puffv"]
+  },
+  {
+    "id": "lat-prep-in-sub",
+    "type": "preposition",
+    "language": "latin",
+    "title": "Prepositions with Dual Cases (in, sub)",
+    "description": "Governing Accusative when indicating movement toward a target, or Ablative when indicating location, state, or position at rest.",
+    "meanings": [
+      {
+        "sense": "Accusative: Motion into/onto",
+        "example": "in urbem ire",
+        "translation": "to go into the city"
+      },
+      {
+        "sense": "Ablative: Rest inside/upon",
+        "example": "in urbe esse",
+        "translation": "to be in the city"
+      }
+    ],
+    "tags": ["latin", "preposition", "accusative", "ablative", "motion"]
+  }
+]
