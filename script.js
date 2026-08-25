@@ -67,6 +67,22 @@ document.addEventListener('DOMContentLoaded', async () => {
   filterAndRender();
 });
 
+// Normalizes variant JSON 'type' names to match UI categories
+function normalizeCategory(typeStr) {
+  if (!typeStr) return '';
+  const t = typeStr.toLowerCase();
+  if (t.includes('syntax') || t.includes('construction') || t.includes('rule')) {
+    return 'syntax';
+  }
+  if (t.includes('prep') || t.includes('vocab')) {
+    return 'vocabulary';
+  }
+  if (t.includes('morph')) {
+    return 'morphology';
+  }
+  return t;
+}
+
 function initFuse(notes) {
   if (typeof Fuse === 'undefined') return;
   const fuseOptions = {
@@ -240,7 +256,10 @@ function filterAndRender() {
   const filtered = searchResults.filter(result => {
     const note = result.item;
     const matchesLang = (language === 'all') || (note.language === language);
-    const matchesCat = (category === 'all') || (note.type === category || note.category === category);
+    
+    const noteCatNormalized = normalizeCategory(note.type || note.category);
+    const matchesCat = (category === 'all') || (noteCatNormalized === category);
+    
     const matchesTag = (tag === 'all') || (note.tags && note.tags.map(t => t.toLowerCase()).includes(tag));
 
     return matchesLang && matchesCat && matchesTag;
@@ -388,7 +407,8 @@ function updateButtonCounts(queryMatches) {
     const btnLang = btn.getAttribute('data-language');
     const count = queryMatches.filter(note => {
       const matchLang = (btnLang === 'all') || (note.language === btnLang);
-      const matchCat = (category === 'all') || (note.type === category || note.category === category);
+      const noteCatNormalized = normalizeCategory(note.type || note.category);
+      const matchCat = (category === 'all') || (noteCatNormalized === category);
       const matchTag = (tag === 'all') || (note.tags && note.tags.map(t => t.toLowerCase()).includes(tag));
       return matchLang && matchCat && matchTag;
     }).length;
@@ -399,7 +419,8 @@ function updateButtonCounts(queryMatches) {
     const btnCat = btn.getAttribute('data-category');
     const count = queryMatches.filter(note => {
       const matchLang = (language === 'all') || (note.language === language);
-      const matchCat = (btnCat === 'all') || (note.type === btnCat || note.category === btnCat);
+      const noteCatNormalized = normalizeCategory(note.type || note.category);
+      const matchCat = (btnCat === 'all') || (noteCatNormalized === btnCat);
       const matchTag = (tag === 'all') || (note.tags && note.tags.map(t => t.toLowerCase()).includes(tag));
       return matchLang && matchCat && matchTag;
     }).length;
@@ -461,7 +482,7 @@ window.openEditModal = function(id) {
   if (!modal) return;
 
   document.getElementById('noteLanguage').value = note.language;
-  document.getElementById('noteType').value = note.type || note.category;
+  document.getElementById('noteType').value = normalizeCategory(note.type || note.category);
   document.getElementById('noteTitle').value = note.title;
   document.getElementById('noteDescription').value = note.description;
   document.getElementById('noteFormula').value = note.formula || '';
