@@ -41,6 +41,12 @@ header h1 {
   margin: 0 auto;
 }
 
+.search-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 #searchInput {
   width: 100%;
   box-sizing: border-box;
@@ -53,6 +59,45 @@ header h1 {
 }
 
 #searchInput:focus {
+  border-color: var(--accent-color);
+}
+
+/* Greek Character Insertion Toolbar */
+.greek-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 0.4rem;
+}
+
+.greek-toolbar-label {
+  font-family: sans-serif;
+  font-size: 0.75rem;
+  color: #cccccc;
+  margin-right: 0.25rem;
+  font-weight: bold;
+}
+
+.modal-window .greek-toolbar-label {
+  color: #555555;
+}
+
+.greek-char-btn {
+  background: #ffffff;
+  color: #1e1e24;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  padding: 0.15rem 0.4rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-family: 'Georgia', serif;
+  transition: all 0.15s ease;
+}
+
+.greek-char-btn:hover {
+  background-color: var(--accent-color);
+  color: #ffffff;
   border-color: var(--accent-color);
 }
 
@@ -386,7 +431,8 @@ mark.highlight {
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.tag.clickable-tag:hover {
+.tag.clickable-tag:hover,
+.tag.clickable-tag.active {
   background-color: var(--accent-color);
   color: #ffffff;
 }
@@ -489,6 +535,7 @@ mark.highlight {
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
+  margin-top: 0.5rem;
 }
 
 /* Empty State Box */
