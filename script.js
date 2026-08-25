@@ -1,15 +1,16 @@
 let allNotes = [];
 let fuseInstance = null;
+let editingId = null;
 
 const filterState = {
   language: 'all',
   category: 'all',
+  tag: 'all',
   query: ''
 };
 
 document.addEventListener('DOMContentLoaded', async () => {
   try {
-    // Fetch both files simultaneously
     const [latinRes, greekRes] = await Promise.all([
       fetch('latin-notes.json'),
       fetch('greek-notes.json')
@@ -25,14 +26,18 @@ document.addEventListener('DOMContentLoaded', async () => {
     allNotes = [...latinNotes, ...greekNotes];
 
     initFuse(allNotes);
+    renderTagFilters();
     filterAndRender();
     setupEventListeners();
   } catch (error) {
     console.error('Failed to load grammar notes:', error);
-    document.getElementById('notesContainer').innerHTML = `
-      <div class="no-results-box">
-        <p>Error loading data. Ensure <code>latin-notes.json</code> and <code>greek-notes.json</code> exist in your directory.</p>
-      </div>`;
+    const container = document.getElementById('notesContainer');
+    if (container) {
+      container.innerHTML = `
+        <div class="no-results-box">
+          <p>Error loading data. Ensure <code>latin-notes.json</code> and <code>greek-notes.json</code> exist in your directory.</p>
+        </div>`;
+    }
   }
 });
 
@@ -54,11 +59,12 @@ function initFuse(notes) {
 
 function setupEventListeners() {
   const searchInput = document.getElementById('searchInput');
-
-  searchInput.addEventListener('input', (e) => {
-    filterState.query = e.target.value.toLowerCase().trim();
-    filterAndRender();
-  });
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      filterState.query = e.target.value.toLowerCase().trim();
+      filterAndRender();
+    });
+  }
 
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
@@ -79,10 +85,85 @@ function setupEventListeners() {
       filterAndRender();
     });
   });
+
+  const modal = document.getElementById('noteModal');
+  const openBtn = document.getElementById('openModalBtn');
+  const closeBtn = document.getElementById('closeModalBtn');
+  const form = document.getElementById('addNoteForm');
+
+  if (openBtn && modal) {
+    openBtn.addEventListener('click', () => {
+      editingId = null;
+      if (form) form.reset();
+      const modalHeader = modal.querySelector('h2');
+      if (modalHeader) modalHeader.textContent = 'Add New Grammar Note';
+      modal.classList.add('open');
+    });
+  }
+
+  if (closeBtn && modal) {
+    closeBtn.addEventListener('click', () => modal.classList.remove('open'));
+  }
+
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) modal.classList.remove('open');
+  });
+
+  if (form) {
+    form.addEventListener('submit', handleFormSubmit);
+  }
+
+  const exportLatinBtn = document.getElementById('exportLatinBtn');
+  const exportGreekBtn = document.getElementById('exportGreekBtn');
+
+  if (exportLatinBtn) {
+    exportLatinBtn.addEventListener('click', () => exportLanguageJson('latin'));
+  }
+  if (exportGreekBtn) {
+    exportGreekBtn.addEventListener('click', () => exportLanguageJson('greek'));
+  }
+}
+
+function renderTagFilters() {
+  const container = document.getElementById('tagFilterContainer');
+  if (!container) return;
+
+  const tagSet = new Set();
+  allNotes.forEach(note => {
+    if (note.tags && Array.isArray(note.tags)) {
+      note.tags.forEach(t => tagSet.add(t.toLowerCase()));
+    }
+  });
+
+  const sortedTags = Array.from(tagSet).sort();
+
+  let html = `<button class="tag-btn ${filterState.tag === 'all' ? 'active' : ''}" data-tag="all">#all</button>`;
+  
+  sortedTags.forEach(tag => {
+    const isActive = filterState.tag === tag ? 'active' : '';
+    html += `<button class="tag-btn ${isActive}" data-tag="${tag}">#${tag}</button>`;
+  });
+
+  if (filterState.tag !== 'all') {
+    html += `<button id="clearTagBtn" class="clear-tag-btn" onclick="clearActiveTag()">✕ Clear #${filterState.tag}</button>`;
+  }
+
+  container.innerHTML = html;
+
+  container.querySelectorAll('.tag-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      container.querySelectorAll('.tag-btn').forEach(b => b.classList.remove('active'));
+      const target = e.currentTarget;
+      target.classList.add('active');
+      filterState.tag = target.getAttribute('data-tag');
+      renderTagFilters();
+      filterAndRender();
+    });
+  });
 }
 
 function filterAndRender() {
-  const { language, category, query } = filterState;
+  const { language, category, tag, query } = filterState;
 
   let searchResults = [];
   if (query && fuseInstance) {
@@ -95,7 +176,9 @@ function filterAndRender() {
     const note = result.item;
     const matchesLang = (language === 'all') || (note.language === language);
     const matchesCat = (category === 'all') || (note.type === category);
-    return matchesLang && matchesCat;
+    const matchesTag = (tag === 'all') || (note.tags && note.tags.map(t => t.toLowerCase()).includes(tag));
+
+    return matchesLang && matchesCat && matchesTag;
   });
 
   renderNotes(filtered);
@@ -104,6 +187,7 @@ function filterAndRender() {
 
 function renderNotes(notesWithMetadata) {
   const container = document.getElementById('notesContainer');
+  if (!container) return;
   container.innerHTML = '';
 
   if (notesWithMetadata.length === 0) {
@@ -138,8 +222,14 @@ function renderNotes(notesWithMetadata) {
 
     let content = `
       <div class="card-header">
-        <span class="badge ${note.language}">${note.language}</span>
-        <span class="type-pill">${note.type ? note.type.replace('_', ' ') : ''}</span>
+        <div class="header-left">
+          <span class="badge ${note.language}">${note.language}</span>
+          <span class="type-pill">${note.type ? note.type.replace('_', ' ') : ''}</span>
+        </div>
+        <div class="card-actions">
+          <button class="card-btn edit-btn" onclick="openEditModal('${note.id}')">Edit</button>
+          <button class="card-btn delete-btn" onclick="deleteNote('${note.id}')">Delete</button>
+        </div>
       </div>
       <h2>${titleText}</h2>
       ${descText ? `<p>${descText}</p>` : ''}
@@ -178,7 +268,10 @@ function renderNotes(notesWithMetadata) {
     }
 
     if (note.tags) {
-      content += `<div class="tags">${note.tags.map(t => `<span class="tag">#${highlightRegexText(t, query)}</span>`).join('')}</div>`;
+      content += `<div class="tags">${note.tags.map(t => {
+        const rawTag = t.toLowerCase();
+        return `<span class="tag clickable-tag" onclick="filterByTag('${rawTag}')">#${highlightRegexText(t, query)}</span>`;
+      }).join('')}</div>`;
     }
 
     card.innerHTML = content;
@@ -218,14 +311,15 @@ function highlightRegexText(text, query) {
 }
 
 function updateButtonCounts(queryMatches) {
-  const { language, category } = filterState;
+  const { language, category, tag } = filterState;
 
   document.querySelectorAll('.lang-btn').forEach(btn => {
     const btnLang = btn.getAttribute('data-language');
     const count = queryMatches.filter(note => {
       const matchLang = (btnLang === 'all') || (note.language === btnLang);
       const matchCat = (category === 'all') || (note.type === category);
-      return matchLang && matchCat;
+      const matchTag = (tag === 'all') || (note.tags && note.tags.map(t => t.toLowerCase()).includes(tag));
+      return matchLang && matchCat && matchTag;
     }).length;
     setButtonBadge(btn, count);
   });
@@ -235,7 +329,8 @@ function updateButtonCounts(queryMatches) {
     const count = queryMatches.filter(note => {
       const matchLang = (language === 'all') || (note.language === language);
       const matchCat = (btnCat === 'all') || (note.type === btnCat);
-      return matchLang && matchCat;
+      const matchTag = (tag === 'all') || (note.tags && note.tags.map(t => t.toLowerCase()).includes(tag));
+      return matchLang && matchCat && matchTag;
     }).length;
     setButtonBadge(btn, count);
   });
@@ -255,6 +350,7 @@ function setButtonBadge(btn, count) {
 function resetFilters() {
   filterState.language = 'all';
   filterState.category = 'all';
+  filterState.tag = 'all';
   filterState.query = '';
 
   const searchInput = document.getElementById('searchInput');
@@ -263,39 +359,73 @@ function resetFilters() {
   document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.getAttribute('data-language') === 'all'));
   document.querySelectorAll('.cat-btn').forEach(btn => btn.classList.toggle('active', btn.getAttribute('data-category') === 'all'));
 
+  renderTagFilters();
   filterAndRender();
 }
 
-function setupEventListeners() {
-  const searchInput = document.getElementById('searchInput');
-  if (searchInput) {
-    searchInput.addEventListener('input', (e) => {
-      filterState.query = e.target.value.toLowerCase().trim();
-      filterAndRender();
-    });
+window.filterByTag = function(tagName) {
+  filterState.tag = tagName;
+  renderTagFilters();
+
+  const contentSection = document.querySelector('.content');
+  if (contentSection) {
+    contentSection.scrollIntoView({ behavior: 'smooth' });
   }
 
+  filterAndRender();
+};
+
+window.clearActiveTag = function() {
+  filterState.tag = 'all';
+  renderTagFilters();
+  filterAndRender();
+};
+
+window.openEditModal = function(id) {
+  const note = allNotes.find(n => n.id === id);
+  if (!note) return;
+
+  editingId = id;
   const modal = document.getElementById('noteModal');
-  const openBtn = document.getElementById('openModalBtn');
-  const closeBtn = document.getElementById('closeModalBtn');
-  const form = document.getElementById('addNoteForm');
+  if (!modal) return;
 
-  if (openBtn && modal) {
-    openBtn.addEventListener('click', () => modal.classList.add('open'));
+  document.getElementById('noteLanguage').value = note.language;
+  document.getElementById('noteType').value = note.type;
+  document.getElementById('noteTitle').value = note.title;
+  document.getElementById('noteDescription').value = note.description;
+  document.getElementById('noteFormula').value = note.formula || '';
+  document.getElementById('noteTags').value = note.tags ? note.tags.join(', ') : '';
+
+  if (note.examples && note.examples.length > 0) {
+    document.getElementById('noteExamples').value = note.examples
+      .map(ex => `${ex.text} | ${ex.translation}`)
+      .join('\n');
+  } else {
+    document.getElementById('noteExamples').value = '';
   }
 
-  if (closeBtn && modal) {
-    closeBtn.addEventListener('click', () => modal.classList.remove('open'));
-  }
+  const modalHeader = modal.querySelector('h2');
+  if (modalHeader) modalHeader.textContent = 'Edit Grammar Note';
+  modal.classList.add('open');
+};
 
-  window.addEventListener('click', (e) => {
-    if (e.target === modal) modal.classList.remove('open');
-  });
+window.deleteNote = function(id) {
+  const note = allNotes.find(n => n.id === id);
+  if (!note) return;
 
-  if (form) {
-    form.addEventListener('submit', handleFormSubmit);
+  if (confirm(`Are you sure you want to delete "${note.title}"?`)) {
+    const lang = note.language;
+    allNotes = allNotes.filter(n => n.id !== id);
+
+    initFuse(allNotes);
+    renderTagFilters();
+    filterAndRender();
+
+    if (shouldAutoExport()) {
+      exportLanguageJson(lang);
+    }
   }
-}
+};
 
 function handleFormSubmit(e) {
   e.preventDefault();
@@ -318,25 +448,51 @@ function handleFormSubmit(e) {
 
   const tags = rawTags ? rawTags.split(',').map(t => t.trim().toLowerCase()).filter(Boolean) : [lang, type];
 
-  const newNote = {
-    id: `${lang.slice(0, 3)}-${type}-${Date.now()}`,
-    type: type,
-    language: lang,
-    title: title,
-    description: description,
-    ...(formula && { formula: formula }),
-    ...(examples.length > 0 && { examples: examples }),
-    tags: tags
-  };
+  if (editingId) {
+    const index = allNotes.findIndex(n => n.id === editingId);
+    if (index !== -1) {
+      allNotes[index] = {
+        ...allNotes[index],
+        language: lang,
+        type: type,
+        title: title,
+        description: description,
+        formula: formula || undefined,
+        examples: examples.length > 0 ? examples : undefined,
+        tags: tags
+      };
+    }
+  } else {
+    const newNote = {
+      id: `${lang.slice(0, 3)}-${type}-${Date.now()}`,
+      type: type,
+      language: lang,
+      title: title,
+      description: description,
+      ...(formula && { formula: formula }),
+      ...(examples.length > 0 && { examples: examples }),
+      tags: tags
+    };
+    allNotes.unshift(newNote);
+  }
 
-  allNotes.unshift(newNote);
   initFuse(allNotes);
+  renderTagFilters();
   filterAndRender();
 
-  exportLanguageJson(lang);
+  if (shouldAutoExport()) {
+    exportLanguageJson(lang);
+  }
 
+  editingId = null;
   e.target.reset();
-  document.getElementById('noteModal').classList.remove('open');
+  const modal = document.getElementById('noteModal');
+  if (modal) modal.classList.remove('open');
+}
+
+function shouldAutoExport() {
+  const toggle = document.getElementById('autoExportToggle');
+  return toggle ? toggle.checked : false;
 }
 
 function exportLanguageJson(language) {
