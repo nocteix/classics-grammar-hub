@@ -9,10 +9,21 @@ const filterState = {
 
 document.addEventListener('DOMContentLoaded', async () => {
   try {
-    const response = await fetch('notes.json');
-    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-    
-    allNotes = await response.json();
+    // Fetch both files simultaneously
+    const [latinRes, greekRes] = await Promise.all([
+      fetch('latin-notes.json'),
+      fetch('greek-notes.json')
+    ]);
+
+    if (!latinRes.ok || !greekRes.ok) {
+      throw new Error('One or both grammar files failed to load.');
+    }
+
+    const latinNotes = await latinRes.json();
+    const greekNotes = await greekRes.json();
+
+    allNotes = [...latinNotes, ...greekNotes];
+
     initFuse(allNotes);
     filterAndRender();
     setupEventListeners();
@@ -20,7 +31,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.error('Failed to load grammar notes:', error);
     document.getElementById('notesContainer').innerHTML = `
       <div class="no-results-box">
-        <p>Error loading <code>notes.json</code>. Make sure you are serving this project via a local web server.</p>
+        <p>Error loading data. Ensure <code>latin-notes.json</code> and <code>greek-notes.json</code> exist in your directory.</p>
       </div>`;
   }
 });
