@@ -3,102 +3,126 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Classics Grammar Hub</title>
+  <title>Grammar Notes Viewer</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.basic.min.js"></script>
+  <!-- Fuse.js CDN for fuzzy search capability -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
 </head>
 <body>
+
   <header>
     <h1>Classics Grammar Reference</h1>
     <div class="controls-wrapper">
-      <input type="text" id="searchInput" placeholder="Search cases, syntax, prepositions, or tags...">
+      
+      <!-- Search Input -->
+      <input type="text" id="searchInput" placeholder="Search titles, descriptions, formulas, or tags...">
 
+      <!-- Language Filter Buttons -->
       <div class="filter-group">
         <span class="filter-label">Language:</span>
         <button class="lang-btn active" data-language="all">All</button>
         <button class="lang-btn" data-language="latin">Latin</button>
-        <button class="lang-btn" data-language="greek">Ancient Greek</button>
+        <button class="lang-btn" data-language="greek">Greek</button>
       </div>
 
+      <!-- Category Filter Buttons -->
       <div class="filter-group">
         <span class="filter-label">Category:</span>
-        <button class="cat-btn active" data-category="all">All Categories</button>
-        <button class="cat-btn" data-category="syntax_rule">Syntax</button>
-        <button class="cat-btn" data-category="preposition">Prepositions</button>
-        <button class="cat-btn" data-category="paradigm">Paradigms</button>
-        <button class="cat-btn" data-category="verb_construction">Verbs</button>
+        <button class="cat-btn active" data-category="all">All</button>
+        <button class="cat-btn" data-category="syntax">Syntax</button>
+        <button class="cat-btn" data-category="morphology">Morphology</button>
+        <button class="cat-btn" data-category="vocabulary">Vocabulary</button>
       </div>
+
+      <!-- Dynamic Tag Filter Bar -->
+      <div class="filter-group">
+        <span class="filter-label">Tags:</span>
+        <div id="tagFilterContainer" class="tag-buttons-wrapper">
+          <!-- Dynamically populated via script.js -->
+        </div>
+      </div>
+
+      <!-- Export & Action Controls -->
+      <div class="export-controls">
+        <label class="toggle-container">
+          <input type="checkbox" id="autoExportToggle">
+          <span>Auto-download JSON on save</span>
+        </label>
+        <button id="exportLatinBtn" class="export-btn">Export Latin JSON</button>
+        <button id="exportGreekBtn" class="export-btn">Export Greek JSON</button>
+        <button id="openModalBtn" class="add-btn">+ Add Note</button>
+      </div>
+
     </div>
   </header>
 
+  <!-- Main Grid Content -->
   <main class="content">
     <div id="notesContainer" class="notes-grid">
+      <!-- Grammar cards rendered dynamically via script.js -->
     </div>
   </main>
 
-  <button id="openModalBtn" class="add-btn">+ Add New Entry</button>
-  
+  <!-- Add / Edit Modal Window -->
   <div id="noteModal" class="modal-backdrop">
     <div class="modal-window">
       <div class="modal-header">
         <h2>Add New Grammar Note</h2>
         <button id="closeModalBtn" class="close-btn">&times;</button>
       </div>
-  
+
       <form id="addNoteForm">
         <div class="form-row">
           <div class="form-group">
             <label for="noteLanguage">Language</label>
             <select id="noteLanguage" required>
               <option value="latin">Latin</option>
-              <option value="greek">Ancient Greek</option>
+              <option value="greek">Greek</option>
             </select>
           </div>
-  
+
           <div class="form-group">
             <label for="noteType">Category Type</label>
             <select id="noteType" required>
-              <option value="syntax_rule">Syntax</option>
-              <option value="preposition">Preposition</option>
-              <option value="verb_construction">Verb Construction</option>
-              <option value="paradigm">Paradigm</option>
+              <option value="syntax">Syntax</option>
+              <option value="morphology">Morphology</option>
+              <option value="vocabulary">Vocabulary</option>
             </select>
           </div>
         </div>
-  
+
         <div class="form-group">
           <label for="noteTitle">Title</label>
-          <input type="text" id="noteTitle" placeholder="e.g. Ablative of Agent" required>
+          <input type="text" id="noteTitle" placeholder="e.g., Ablative Absolute" required>
         </div>
-  
+
         <div class="form-group">
           <label for="noteDescription">Description</label>
-          <textarea id="noteDescription" rows="3" placeholder="Explain the rule or function..." required></textarea>
+          <textarea id="noteDescription" rows="3" placeholder="Brief summary of the grammatical rule..." required></textarea>
         </div>
-  
+
         <div class="form-group">
           <label for="noteFormula">Structure / Formula (Optional)</label>
-          <input type="text" id="noteFormula" placeholder="e.g. ā/ab + Ablative Noun">
+          <input type="text" id="noteFormula" placeholder="e.g., Noun (Ablative) + Participle (Ablative)">
         </div>
-  
+
         <div class="form-group">
-          <label for="noteExamples">Examples (Format: Latin/Greek | Translation)</label>
-          <textarea id="noteExamples" rows="2" placeholder="Urbe capta | The city having been captured"></textarea>
-          <small>Put one example per line, separating sentence and translation with |</small>
+          <label for="noteExamples">Examples (Optional)</label>
+          <textarea id="noteExamples" rows="3" placeholder="Format each line as: Foreign Phrase | English Translation"></textarea>
+          <small>One per line, separated by vertical bar (|)</small>
         </div>
-  
+
         <div class="form-group">
-          <label for="noteTags">Tags (Comma-separated)</label>
-          <input type="text" id="noteTags" placeholder="latin, syntax, ablative">
+          <label for="noteTags">Tags (Optional)</label>
+          <input type="text" id="noteTags" placeholder="e.g., ablative, participle, syntax">
+          <small>Comma-separated list</small>
         </div>
-  
-        <div class="form-actions">
-          <button type="submit" class="submit-btn">Save & Export JSON</button>
-        </div>
+
+        <button type="submit" class="submit-btn">Save Grammar Note</button>
       </form>
     </div>
   </div>
-  
+
   <script src="script.js"></script>
 </body>
 </html>
