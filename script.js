@@ -1,6 +1,7 @@
 let allNotes = [];
 let fuseInstance = null;
 let editingId = null;
+let lastActiveInput = null;
 
 const filterState = {
   language: 'all',
@@ -9,7 +10,18 @@ const filterState = {
   query: ''
 };
 
+const GREEK_DIACRITICS = [
+  'ά', 'έ', 'ή', 'ί', 'ό', 'ύ', 'ώ',
+  'ὰ', 'ὲ', 'ὴ', 'ὶ', 'ὸ', 'ὺ', 'ὼ',
+  'ᾶ', 'ῆ', 'ῖ', 'ῦ',
+  'ἁ', 'ἑ', 'ἡ', 'ἱ', 'ὁ', 'ὑ', 'ὡ',
+  'ᾳ', 'ῃ', 'ῳ'
+];
+
 document.addEventListener('DOMContentLoaded', async () => {
+  renderGreekToolbars();
+  setupEventListeners();
+
   try {
     const [latinRes, greekRes] = await Promise.all([
       fetch('latin-notes.json'),
@@ -24,24 +36,39 @@ document.addEventListener('DOMContentLoaded', async () => {
     const greekNotes = await greekRes.json();
 
     allNotes = [...latinNotes, ...greekNotes];
-
-    initFuse(allNotes);
-    renderTagFilters();
-    filterAndRender();
-    setupEventListeners();
   } catch (error) {
-    console.error('Failed to load grammar notes:', error);
-    const container = document.getElementById('notesContainer');
-    if (container) {
-      container.innerHTML = `
-        <div class="no-results-box">
-          <p>Error loading data. Ensure <code>latin-notes.json</code> and <code>greek-notes.json</code> exist in your directory.</p>
-        </div>`;
-    }
+    console.warn('Could not fetch JSON files, initializing with fallback sample data:', error);
+    allNotes = [
+      {
+        id: 'lat-syntax-1',
+        language: 'latin',
+        type: 'syntax',
+        title: 'Ablative Absolute',
+        description: 'A noun and participle in the ablative case functioning independently from the main clause.',
+        formula: 'Noun (Abl.) + Participle (Abl.)',
+        examples: [{ text: 'Urbe capta, duces discesserunt.', translation: 'The city having been captured, the leaders departed.' }],
+        tags: ['ablative', 'participle', 'syntax']
+      },
+      {
+        id: 'grk-syntax-2',
+        language: 'greek',
+        type: 'syntax',
+        title: 'Genitive Absolute',
+        description: 'Equivalent to the Latin Ablative Absolute; features a noun and participle in the genitive case.',
+        formula: 'Noun (Gen.) + Participle (Gen.)',
+        examples: [{ text: 'τοῦ βασιλέως λέγοντος', translation: 'While the king was speaking' }],
+        tags: ['genitive', 'participle', 'syntax']
+      }
+    ];
   }
+
+  initFuse(allNotes);
+  renderTagFilters();
+  filterAndRender();
 });
 
 function initFuse(notes) {
+  if (typeof Fuse === 'undefined') return;
   const fuseOptions = {
     includeScore: true,
     includeMatches: true,
@@ -55,6 +82,53 @@ function initFuse(notes) {
     ]
   };
   fuseInstance = new Fuse(notes, fuseOptions);
+}
+
+document.addEventListener('focusin', (e) => {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+    lastActiveInput = e.target;
+  }
+});
+
+function renderGreekToolbars() {
+  const containers = [
+    document.getElementById('searchGreekToolbar'),
+    document.getElementById('modalGreekToolbar')
+  ];
+
+  containers.forEach(container => {
+    if (!container) return;
+
+    let html = `<span class="greek-toolbar-label">Greek:</span>`;
+    GREEK_DIACRITICS.forEach(char => {
+      html += `<button type="button" class="greek-char-btn" data-char="${char}">${char}</button>`;
+    });
+
+    container.innerHTML = html;
+
+    container.querySelectorAll('.greek-char-btn').forEach(btn => {
+      btn.addEventListener('mousedown', (e) => {
+        e.preventDefault();
+        insertGreekChar(btn.getAttribute('data-char'));
+      });
+    });
+  });
+}
+
+function insertGreekChar(char) {
+  const input = lastActiveInput || document.getElementById('searchInput');
+  if (!input) return;
+
+  input.focus();
+  const start = input.selectionStart ?? input.value.length;
+  const end = input.selectionEnd ?? input.value.length;
+  const val = input.value;
+
+  input.value = val.substring(0, start) + char + val.substring(end);
+  const newPos = start + char.length;
+  input.setSelectionRange(newPos, newPos);
+
+  input.dispatchEvent(new Event('input', { bubbles: true }));
 }
 
 function setupEventListeners() {
@@ -113,15 +187,8 @@ function setupEventListeners() {
     form.addEventListener('submit', handleFormSubmit);
   }
 
-  const exportLatinBtn = document.getElementById('exportLatinBtn');
-  const exportGreekBtn = document.getElementById('exportGreekBtn');
-
-  if (exportLatinBtn) {
-    exportLatinBtn.addEventListener('click', () => exportLanguageJson('latin'));
-  }
-  if (exportGreekBtn) {
-    exportGreekBtn.addEventListener('click', () => exportLanguageJson('greek'));
-  }
+  document.getElementById('exportLatinBtn')?.addEventListener('click', () => exportLanguageJson('latin'));
+  document.getElementById('exportGreekBtn')?.addEventListener('click', () => exportLanguageJson('greek'));
 }
 
 function renderTagFilters() {
@@ -152,10 +219,8 @@ function renderTagFilters() {
 
   container.querySelectorAll('.tag-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
-      container.querySelectorAll('.tag-btn').forEach(b => b.classList.remove('active'));
-      const target = e.currentTarget;
-      target.classList.add('active');
-      filterState.tag = target.getAttribute('data-tag');
+      const clickedTag = e.currentTarget.getAttribute('data-tag');
+      filterState.tag = (filterState.tag === clickedTag) ? 'all' : clickedTag;
       renderTagFilters();
       filterAndRender();
     });
@@ -175,7 +240,7 @@ function filterAndRender() {
   const filtered = searchResults.filter(result => {
     const note = result.item;
     const matchesLang = (language === 'all') || (note.language === language);
-    const matchesCat = (category === 'all') || (note.type === category);
+    const matchesCat = (category === 'all') || (note.type === category || note.category === category);
     const matchesTag = (tag === 'all') || (note.tags && note.tags.map(t => t.toLowerCase()).includes(tag));
 
     return matchesLang && matchesCat && matchesTag;
@@ -224,7 +289,7 @@ function renderNotes(notesWithMetadata) {
       <div class="card-header">
         <div class="header-left">
           <span class="badge ${note.language}">${note.language}</span>
-          <span class="type-pill">${note.type ? note.type.replace('_', ' ') : ''}</span>
+          <span class="type-pill">${(note.type || note.category || '').replace('_', ' ')}</span>
         </div>
         <div class="card-actions">
           <button class="card-btn edit-btn" onclick="openEditModal('${note.id}')">Edit</button>
@@ -239,7 +304,7 @@ function renderNotes(notesWithMetadata) {
       content += `<div class="formula"><strong>Structure:</strong> ${highlightRegexText(note.formula, query)}</div>`;
     }
 
-    if (note.meanings) {
+    if (note.meanings && note.meanings.length > 0) {
       content += `<ul class="meaning-list">`;
       note.meanings.forEach(m => {
         content += `<li><strong>${m.sense}:</strong> <em>${m.example}</em> (${m.translation})</li>`;
@@ -247,7 +312,7 @@ function renderNotes(notesWithMetadata) {
       content += `</ul>`;
     }
 
-    if (note.verbs) {
+    if (note.verbs && note.verbs.length > 0) {
       content += `<p><strong>Verbs:</strong> ${note.verbs.map(v => `<code>${v}</code>`).join(', ')}</p>`;
     }
 
@@ -262,15 +327,20 @@ function renderNotes(notesWithMetadata) {
     if (note.examples && note.examples.length > 0) {
       content += `<div class="examples-list">`;
       note.examples.forEach(ex => {
-        content += `<div class="example-item"><em>${ex.text}</em> — "${ex.translation}"</div>`;
+        const textStr = typeof ex === 'string' ? ex : `${ex.text} | ${ex.translation}`;
+        const parts = textStr.split('|');
+        const orig = parts[0] ? parts[0].trim() : '';
+        const trans = parts[1] ? parts[1].trim() : '';
+        content += `<div class="example-item"><em>${highlightRegexText(orig, query)}</em> ${trans ? `— "${highlightRegexText(trans, query)}"` : ''}</div>`;
       });
       content += `</div>`;
     }
 
-    if (note.tags) {
+    if (note.tags && note.tags.length > 0) {
       content += `<div class="tags">${note.tags.map(t => {
         const rawTag = t.toLowerCase();
-        return `<span class="tag clickable-tag" onclick="filterByTag('${rawTag}')">#${highlightRegexText(t, query)}</span>`;
+        const isActive = (filterState.tag === rawTag) ? 'active' : '';
+        return `<span class="tag clickable-tag ${isActive}" onclick="filterByTag('${rawTag}')">#${highlightRegexText(t, query)}</span>`;
       }).join('')}</div>`;
     }
 
@@ -280,6 +350,7 @@ function renderNotes(notesWithMetadata) {
 }
 
 function buildTableHTML(tableData) {
+  if (!tableData || !tableData.headers || !tableData.rows) return '';
   let html = `<table class="paradigm-table"><thead><tr>`;
   tableData.headers.forEach(h => html += `<th>${h}</th>`);
   html += `</tr></thead><tbody>`;
@@ -317,7 +388,7 @@ function updateButtonCounts(queryMatches) {
     const btnLang = btn.getAttribute('data-language');
     const count = queryMatches.filter(note => {
       const matchLang = (btnLang === 'all') || (note.language === btnLang);
-      const matchCat = (category === 'all') || (note.type === category);
+      const matchCat = (category === 'all') || (note.type === category || note.category === category);
       const matchTag = (tag === 'all') || (note.tags && note.tags.map(t => t.toLowerCase()).includes(tag));
       return matchLang && matchCat && matchTag;
     }).length;
@@ -328,7 +399,7 @@ function updateButtonCounts(queryMatches) {
     const btnCat = btn.getAttribute('data-category');
     const count = queryMatches.filter(note => {
       const matchLang = (language === 'all') || (note.language === language);
-      const matchCat = (btnCat === 'all') || (note.type === btnCat);
+      const matchCat = (btnCat === 'all') || (note.type === btnCat || note.category === btnCat);
       const matchTag = (tag === 'all') || (note.tags && note.tags.map(t => t.toLowerCase()).includes(tag));
       return matchLang && matchCat && matchTag;
     }).length;
@@ -343,7 +414,7 @@ function setButtonBadge(btn, count) {
     badge.className = 'count-badge';
     btn.appendChild(badge);
   }
-  badge.textContent = `[${count}]`;
+  badge.textContent = ` [${count}]`;
   btn.classList.toggle('empty', count === 0 && !btn.classList.contains('active'));
 }
 
@@ -364,7 +435,7 @@ function resetFilters() {
 }
 
 window.filterByTag = function(tagName) {
-  filterState.tag = tagName;
+  filterState.tag = (filterState.tag === tagName) ? 'all' : tagName;
   renderTagFilters();
 
   const contentSection = document.querySelector('.content');
@@ -390,7 +461,7 @@ window.openEditModal = function(id) {
   if (!modal) return;
 
   document.getElementById('noteLanguage').value = note.language;
-  document.getElementById('noteType').value = note.type;
+  document.getElementById('noteType').value = note.type || note.category;
   document.getElementById('noteTitle').value = note.title;
   document.getElementById('noteDescription').value = note.description;
   document.getElementById('noteFormula').value = note.formula || '';
@@ -398,7 +469,7 @@ window.openEditModal = function(id) {
 
   if (note.examples && note.examples.length > 0) {
     document.getElementById('noteExamples').value = note.examples
-      .map(ex => `${ex.text} | ${ex.translation}`)
+      .map(ex => typeof ex === 'string' ? ex : `${ex.text} | ${ex.translation}`)
       .join('\n');
   } else {
     document.getElementById('noteExamples').value = '';
@@ -455,6 +526,7 @@ function handleFormSubmit(e) {
         ...allNotes[index],
         language: lang,
         type: type,
+        category: type,
         title: title,
         description: description,
         formula: formula || undefined,
@@ -466,6 +538,7 @@ function handleFormSubmit(e) {
     const newNote = {
       id: `${lang.slice(0, 3)}-${type}-${Date.now()}`,
       type: type,
+      category: type,
       language: lang,
       title: title,
       description: description,
