@@ -63,22 +63,6 @@ header h1 {
   border-color: var(--accent-color);
 }
 
-.greek-toolbar {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.25rem;
-  margin-top: 0.4rem;
-}
-
-.greek-toolbar-label {
-  font-family: sans-serif;
-  font-size: 0.75rem;
-  color: #cccccc;
-  margin-right: 0.25rem;
-  font-weight: bold;
-}
-
 .card.greek,
 .badge.greek,
 #searchGreekToolbar,
@@ -106,22 +90,52 @@ header h1 {
   color: #555555;
 }
 
+#searchGreekToolbar,
+#modalGreekToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 0;
+}
+
+.greek-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 0.4rem;
+}
+
+.greek-toolbar-label {
+  font-family: sans-serif;
+  font-size: 0.75rem;
+  color: #cccccc;
+  margin-right: 0.25rem;
+  font-weight: bold;
+}
+
 .greek-char-btn {
-  background: #ffffff;
-  color: #1e1e24;
-  border: 1px solid #cccccc;
+  font-family: 'Gentium Book Plus', 'Noto Serif', serif;
+  font-size: 1.15em;
+  line-height: 1;
+  width: 28px;
+  height: 32px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
   border-radius: 4px;
-  padding: 0.15rem 0.4rem;
-  font-size: 0.85rem;
+  background-color: #ffffff;
+  color: #111111;
   cursor: pointer;
-  font-family: 'Georgia', serif;
-  transition: all 0.15s ease;
+  user-select: none;
 }
 
 .greek-char-btn:hover {
-  background-color: var(--accent-color);
-  color: #ffffff;
-  border-color: var(--accent-color);
+  background-color: #f0f0f0;
+  border-color: #999;
 }
 
 .filter-group {
