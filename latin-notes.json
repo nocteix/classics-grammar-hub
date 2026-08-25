@@ -17,7 +17,7 @@
       }
     ],
     "mnemonic": "Head verb triggers Subject Accusative + Verb Infinitive.",
-    "tags": ["latin", "syntax", "accusative", "infinitive", "head-verbs"]
+    "tags": ["accusative", "infinitive", "head-verbs"]
   },
   {
     "id": "lat-syntax-cum-clause",
@@ -37,7 +37,7 @@
       }
     ],
     "mnemonic": "Cum + Subjunctive = When, Since, or Although (tamen points to 'although').",
-    "tags": ["latin", "syntax", "cum", "subjunctive", "subordinate"]
+    "tags": ["subjunctive", "subordinate"]
   },
   {
     "id": "lat-syntax-passive-periphrastic",
@@ -57,7 +57,7 @@
       }
     ],
     "mnemonic": "-ND- + sum = must/should; the agent is Dative.",
-    "tags": ["latin", "syntax", "gerundive", "dative", "obligation"]
+    "tags": ["gerundive", "dative", "obligation"]
   },
   {
     "id": "lat-syntax-purpose-clause",
@@ -77,7 +77,7 @@
       }
     ],
     "mnemonic": "Ut = so that; Ne = lest / so that not.",
-    "tags": ["latin", "syntax", "purpose", "subjunctive", "ut", "ne"]
+    "tags": ["purpose", "subjunctive"]
   },
   {
     "id": "lat-syntax-dative-possession",
@@ -97,6 +97,6 @@
       }
     ],
     "mnemonic": "Literal: [Thing] exists to [Person] → Person has Thing.",
-    "tags": ["latin", "syntax", "dative", "possession", "sum"]
+    "tags": ["dative", "possession"]
   }
 ]
