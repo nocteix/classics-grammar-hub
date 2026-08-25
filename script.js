@@ -67,7 +67,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   filterAndRender();
 });
 
-// Normalizes variant JSON 'type' names to match UI categories
 function normalizeCategory(typeStr) {
   if (!typeStr) return '';
   const t = typeStr.toLowerCase();
@@ -212,9 +211,17 @@ function renderTagFilters() {
   if (!container) return;
 
   const tagSet = new Set();
+  const categoryKeywords = ['syntax', 'vocabulary', 'morphology', 'latin', 'greek'];
+
   allNotes.forEach(note => {
     if (note.tags && Array.isArray(note.tags)) {
-      note.tags.forEach(t => tagSet.add(t.toLowerCase()));
+      note.tags.forEach(t => {
+        const cleanTag = t.toLowerCase().trim();
+
+        if (!categoryKeywords.includes(cleanTag)) {
+          tagSet.add(cleanTag);
+        }
+      });
     }
   });
 
@@ -538,7 +545,7 @@ function handleFormSubmit(e) {
     };
   }).filter(ex => ex.text) : [];
 
-  const tags = rawTags ? rawTags.split(',').map(t => t.trim().toLowerCase()).filter(Boolean) : [lang, type];
+  const tags = rawTags ? rawTags.split(',').map(t => t.trim().toLowerCase()).filter(Boolean) : [];
 
   if (editingId) {
     const index = allNotes.findIndex(n => n.id === editingId);
