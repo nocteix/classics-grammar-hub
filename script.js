@@ -11,15 +11,15 @@ const filterState = {
 };
 
 const GREEK_DIACRITICS = [
-  // Acute Vowels
+  // Acute (Tonos)
   '\u03AC', '\u03AD', '\u03AE', '\u03AF', '\u03CC', '\u03CD', '\u03CE',
-  // Polytonic Grave Vowels
+  // Polytonic Grave (Varia)
   '\u1F70', '\u1F72', '\u1F74', '\u1F76', '\u1F78', '\u1F7A', '\u1F7C',
-  // Circumflex Vowels
+  // Polytonic Circumflex (Perispomeni)
   '\u1FB6', '\u1FC6', '\u1FD6', '\u1FE6', '\u1FF6',
-  // Rough Breathing
+  // Rough Breathing (Dasia)
   '\u1F01', '\u1F11', '\u1F21', '\u1F31', '\u1F41', '\u1F51', '\u1F61',
-  // Iota Subscript Vowels
+  // Iota Subscript (Ypogregrammeni)
   '\u1FB3', '\u1FC3', '\u1FF3'
 ];
 
