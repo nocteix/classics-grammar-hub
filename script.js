@@ -265,3 +265,93 @@ function resetFilters() {
 
   filterAndRender();
 }
+
+function setupEventListeners() {
+  const searchInput = document.getElementById('searchInput');
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      filterState.query = e.target.value.toLowerCase().trim();
+      filterAndRender();
+    });
+  }
+
+  const modal = document.getElementById('noteModal');
+  const openBtn = document.getElementById('openModalBtn');
+  const closeBtn = document.getElementById('closeModalBtn');
+  const form = document.getElementById('addNoteForm');
+
+  if (openBtn && modal) {
+    openBtn.addEventListener('click', () => modal.classList.add('open'));
+  }
+
+  if (closeBtn && modal) {
+    closeBtn.addEventListener('click', () => modal.classList.remove('open'));
+  }
+
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) modal.classList.remove('open');
+  });
+
+  if (form) {
+    form.addEventListener('submit', handleFormSubmit);
+  }
+}
+
+function handleFormSubmit(e) {
+  e.preventDefault();
+
+  const lang = document.getElementById('noteLanguage').value;
+  const type = document.getElementById('noteType').value;
+  const title = document.getElementById('noteTitle').value.trim();
+  const description = document.getElementById('noteDescription').value.trim();
+  const formula = document.getElementById('noteFormula').value.trim();
+  const rawExamples = document.getElementById('noteExamples').value.trim();
+  const rawTags = document.getElementById('noteTags').value.trim();
+
+  const examples = rawExamples ? rawExamples.split('\n').map(line => {
+    const parts = line.split('|');
+    return {
+      text: parts[0] ? parts[0].trim() : '',
+      translation: parts[1] ? parts[1].trim() : ''
+    };
+  }).filter(ex => ex.text) : [];
+
+  const tags = rawTags ? rawTags.split(',').map(t => t.trim().toLowerCase()).filter(Boolean) : [lang, type];
+
+  const newNote = {
+    id: `${lang.slice(0, 3)}-${type}-${Date.now()}`,
+    type: type,
+    language: lang,
+    title: title,
+    description: description,
+    ...(formula && { formula: formula }),
+    ...(examples.length > 0 && { examples: examples }),
+    tags: tags
+  };
+
+  allNotes.unshift(newNote);
+  initFuse(allNotes);
+  filterAndRender();
+
+  exportLanguageJson(lang);
+
+  e.target.reset();
+  document.getElementById('noteModal').classList.remove('open');
+}
+
+function exportLanguageJson(language) {
+  const filteredNotes = allNotes.filter(note => note.language === language);
+  const jsonString = JSON.stringify(filteredNotes, null, 2);
+  
+  const blob = new Blob([jsonString], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = `${language}-notes.json`;
+  document.body.appendChild(link);
+  link.click();
+  
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
+}
