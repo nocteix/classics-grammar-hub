@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Classics Grammar Hub</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Fuse.js Fuzzy Search Library -->
   <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.basic.min.js"></script>
 </head>
 <body>
@@ -34,10 +33,72 @@
 
   <main class="content">
     <div id="notesContainer" class="notes-grid">
-      <!-- Dynamic cards render here -->
     </div>
   </main>
 
+  <button id="openModalBtn" class="add-btn">+ Add New Entry</button>
+  
+  <div id="noteModal" class="modal-backdrop">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h2>Add New Grammar Note</h2>
+        <button id="closeModalBtn" class="close-btn">&times;</button>
+      </div>
+  
+      <form id="addNoteForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="noteLanguage">Language</label>
+            <select id="noteLanguage" required>
+              <option value="latin">Latin</option>
+              <option value="greek">Ancient Greek</option>
+            </select>
+          </div>
+  
+          <div class="form-group">
+            <label for="noteType">Category Type</label>
+            <select id="noteType" required>
+              <option value="syntax_rule">Syntax</option>
+              <option value="preposition">Preposition</option>
+              <option value="verb_construction">Verb Construction</option>
+              <option value="paradigm">Paradigm</option>
+            </select>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="noteTitle">Title</label>
+          <input type="text" id="noteTitle" placeholder="e.g. Ablative of Agent" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="noteDescription">Description</label>
+          <textarea id="noteDescription" rows="3" placeholder="Explain the rule or function..." required></textarea>
+        </div>
+  
+        <div class="form-group">
+          <label for="noteFormula">Structure / Formula (Optional)</label>
+          <input type="text" id="noteFormula" placeholder="e.g. ā/ab + Ablative Noun">
+        </div>
+  
+        <div class="form-group">
+          <label for="noteExamples">Examples (Format: Latin/Greek | Translation)</label>
+          <textarea id="noteExamples" rows="2" placeholder="Urbe capta | The city having been captured"></textarea>
+          <small>Put one example per line, separating sentence and translation with |</small>
+        </div>
+  
+        <div class="form-group">
+          <label for="noteTags">Tags (Comma-separated)</label>
+          <input type="text" id="noteTags" placeholder="latin, syntax, ablative">
+        </div>
+  
+        <div class="form-actions">
+          <button type="submit" class="submit-btn">Save & Export JSON</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
   <script src="script.js"></script>
 </body>
 </html>
