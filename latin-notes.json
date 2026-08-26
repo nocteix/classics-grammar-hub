@@ -343,7 +343,7 @@
         "translation": "He is writing a letter."
       }
     ],
-    "tags": ["accusative", "transitive"]
+    "tags": ["accusative"]
   },
   {
     "id": "lat-acc-cognate",
@@ -362,7 +362,7 @@
         "translation": "I have fought a thousand fights."
       }
     ],
-    "tags": ["accusative", "intransitive"]
+    "tags": ["accusative"]
   },
   {
     "id": "lat-acc-double",
@@ -381,13 +381,13 @@
         "translation": "I ask you your opinion."
       }
     ],
-    "tags": ["accusative", "double-object"]
+    "tags": ["accusative"]
   },
   {
     "id": "lat-acc-predicate",
     "language": "latin",
     "type": "syntax",
-    "title": "Objective Predicate / Predicate Accusative (Objektiv Predikatsfyllnad)",
+    "title": "Objective Predicate / Predicate Accusative",
     "description": "Used with verbs of calling, naming, electing, making, or deeming (e.g., vocare, creare, habere) where a second accusative describes or renames the direct object.",
     "formula": "Verb + Direct Object (Accusative) + Predicate Noun/Adjective (Accusative)",
     "examples": [
@@ -400,7 +400,7 @@
         "translation": "I consider you a friend."
       }
     ],
-    "tags": ["accusative", "predicate", "objektiv-predikatsfyllnad"]
+    "tags": ["accusative"]
   },
   {
     "id": "lat-acc-extent-space",
@@ -419,6 +419,6 @@
         "translation": "A trench ten feet wide."
       }
     ],
-    "tags": ["accusative", "spatii", "extent"]
+    "tags": ["accusative"]
   }
 ]
