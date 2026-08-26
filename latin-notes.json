@@ -420,5 +420,214 @@
       }
     ],
     "tags": ["accusative"]
+  },
+  {
+    "id": "lat-abl-separativus",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Ablative of Separation (Ablativus Separativus)",
+    "description": "Indicates motion away from, origin, or separation from a person, place, or thing, with or without prepositions (a/ab, e/ex, de).",
+    "formula": "Verb of Freeing/Separating + Noun (Ablative)",
+    "examples": [
+      {
+        "text": "Patre suo natus est.",
+        "translation": "He was born from his father."
+      },
+      {
+        "text": "Urbe excessit.",
+        "translation": "He departed from the city."
+      }
+    ],
+    "tags": ["ablative"]
+  },
+  {
+    "id": "lat-abl-comparationis",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Ablative of Comparison (Ablativus Comparationis)",
+    "description": "Used with comparative adjectives or adverbs instead of 'quam' (than) to mark the standard of comparison.",
+    "formula": "Comparative Adjective + Noun (Ablative)",
+    "examples": [
+      {
+        "text": "Cicerone eloquentior.",
+        "translation": "More eloquent than Cicero."
+      },
+      {
+        "text": "Vita luce carior est.",
+        "translation": "Life is dearer than light."
+      }
+    ],
+    "tags": ["ablative"]
+  },
+  {
+    "id": "lat-abl-loci",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Ablative of Place Where (Ablativus Loci)",
+    "description": "Denotes location or place where an action occurs, typically with the preposition 'in' (or without a preposition for specific proper nouns/phrases).",
+    "formula": "(In) + Noun (Ablative)",
+    "examples": [
+      {
+        "text": "In urbe vivit.",
+        "translation": "He lives in the city."
+      },
+      {
+        "text": "Terra marique.",
+        "translation": "On land and at sea."
+      }
+    ],
+    "tags": ["ablative"]
+  },
+  {
+    "id": "lat-abl-temporis",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Ablative of Time When or Within Which (Ablativus Temporis)",
+    "description": "Specifies the exact point in time when an action takes place, or the period within which it occurs, without a preposition.",
+    "formula": "Time Noun (Ablative)",
+    "examples": [
+      {
+        "text": "Tertio die venit.",
+        "translation": "He came on the third day."
+      },
+      {
+        "text": "Paucis horis confectum est.",
+        "translation": "It was completed within a few hours."
+      }
+    ],
+    "tags": ["ablative"]
+  },
+  {
+    "id": "lat-abl-qualitatis",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Ablative of Quality/Description (Ablativus Qualitatis)",
+    "description": "Modifies a noun to denote physical traits, qualities, or transitory states. Must be accompanied by an adjective.",
+    "formula": "Noun + [Adjective + Noun] (Ablative)",
+    "examples": [
+      {
+        "text": "Vir magna sapientia.",
+        "translation": "A man of great wisdom."
+      },
+      {
+        "text": "Puer caeruleis oculis.",
+        "translation": "A boy with blue eyes."
+      }
+    ],
+    "tags": ["ablative"]
+  },
+  {
+    "id": "lat-abl-modi",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Ablative of Manner (Ablativus Modi)",
+    "description": "Describes the manner or spirit in which an action is performed, using 'cum' or an adjective-noun agreement.",
+    "formula": "(Cum) + Noun (Ablative)",
+    "examples": [
+      {
+        "text": "Cum cura scribit.",
+        "translation": "He writes with care (carefully)."
+      },
+      {
+        "text": "Magno studio laborat.",
+        "translation": "He works with great enthusiasm."
+      }
+    ],
+    "tags": ["ablative"]
+  },
+  {
+    "id": "lat-abl-instrumenti",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Ablative of Means/Instrument (Ablativus Instrumenti)",
+    "description": "Marks the inanimate tool, weapon, or instrument used to accomplish an action, without any preposition.",
+    "formula": "Verb + Tool/Instrument (Ablative)",
+    "examples": [
+      {
+        "text": "Gladio pugnavit.",
+        "translation": "He fought with a sword."
+      },
+      {
+        "text": "Oculis videmus.",
+        "translation": "We see with our eyes."
+      }
+    ],
+    "tags": ["ablative"]
+  },
+  {
+    "id": "lat-abl-pretii",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Ablative of Price (Ablativus Pretii)",
+    "description": "Denotes the definite price, cost, or monetary amount paid for something with verbs of buying, selling, or costing.",
+    "formula": "Verb of Buying/Selling + Amount (Ablative)",
+    "examples": [
+      {
+        "text": "Domum magno pretio emit.",
+        "translation": "He bought the house at a high price."
+      },
+      {
+        "text": "Vendidit auro patriam.",
+        "translation": "He sold his country for gold."
+      }
+    ],
+    "tags": ["ablative"]
+  },
+  {
+    "id": "lat-abl-causae",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Ablative of Cause (Ablativus Causae)",
+    "description": "Expresses the reason, motive, or internal/external cause behind an action or state.",
+    "formula": "Verb/Adjective + Cause (Ablative)",
+    "examples": [
+      {
+        "text": "Metu mortuus est.",
+        "translation": "He died of fear."
+      },
+      {
+        "text": "Gaudio exsultare.",
+        "translation": "To leap for joy."
+      }
+    ],
+    "tags": ["ablative"]
+  },
+  {
+    "id": "lat-abl-limitationis",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Ablative of Specification/Respect (Ablativus Limitationis)",
+    "description": "Limits or specifies the scope of an adjective, noun, or verb ('in respect to', 'in terms of').",
+    "formula": "Adjective/Verb + Specific Field (Ablative)",
+    "examples": [
+      {
+        "text": "Rex nomine, non facto.",
+        "translation": "A king in name, not in deed."
+      },
+      {
+        "text": "Praestare ceteris virtute.",
+        "translation": "To surpass the others in courage."
+      }
+    ],
+    "tags": ["ablative"]
+  },
+  {
+    "id": "lat-abl-mensurae",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Ablative of Degree of Difference (Ablativus Mensurae)",
+    "description": "Indicates the measure or degree by which one thing differs from another, used alongside comparative words.",
+    "formula": "Degree Word (Ablative) + Comparative Adjective/Adverb",
+    "examples": [
+      {
+        "text": "Multo melior.",
+        "translation": "Much better (Better by much)."
+      },
+      {
+        "text": "Paulo post.",
+        "translation": "A little later (Later by a little)."
+      }
+    ],
+    "tags": ["ablative"]
   }
 ]
