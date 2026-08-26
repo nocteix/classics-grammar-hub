@@ -1557,5 +1557,64 @@
       }
     ],
     "tags": ["passive", "verb"]
+  },
+  [
+  {
+    "id": "lat-syntax-optative-subjunctive-present",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Optative Subjunctive (Present Tense - Future Wish)",
+    "description": "Expresses a wish for the future that is reachable or possible ('May...', 'Would that...'). Often introduced by 'utinam' or 'o si', though 'utinam' can be omitted. The negative is introduced by 'ne' or 'utinam ne'.",
+    "formula": "(Utinam) + Present Subjunctive",
+    "examples": [
+      {
+        "text": "Utinam veniat!",
+        "translation": "May he come! / Would that he come!"
+      },
+      {
+        "text": "Ne discedant.",
+        "translation": "May they not depart."
+      }
+    ],
+    "tags": ["optative", "subjunctive"]
+  },
+  {
+    "id": "lat-syntax-optative-subjunctive-imperfect",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Optative Subjunctive (Imperfect Tense - Present Unfulfilled Wish)",
+    "description": "Expresses a wish contrary to present fact ('If only... were happening right now'). Typically introduced by 'utinam'. The negative is 'utinam ne'.",
+    "formula": "Utinam + Imperfect Subjunctive",
+    "examples": [
+      {
+        "text": "Utinam hic adesset!",
+        "translation": "Would that he were here! / If only he were present right now!"
+      },
+      {
+        "text": "Utinam ne tantum dolerem.",
+        "translation": "If only I were not suffering so much."
+      }
+    ],
+    "tags": ["optative", "subjunctive"]
+  },
+  {
+    "id": "lat-syntax-optative-subjunctive-pluperfect",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Optative Subjunctive (Pluperfect Tense - Past Unfulfilled Wish)",
+    "description": "Expresses a wish contrary to past fact ('If only... had happened in the past'). Introduced by 'utinam'. The negative is 'utinam ne'.",
+    "formula": "Utinam + Pluperfect Subjunctive",
+    "examples": [
+      {
+        "text": "Utinam ne id fecisses!",
+        "translation": "Would that you had not done that! / If only you hadn't done it!"
+      },
+      {
+        "text": "Utinam vici-ssent!",
+        "translation": "If only they had won!"
+      }
+    ],
+    "tags": ["optative", "subjunctive"]
   }
+]
 ]
