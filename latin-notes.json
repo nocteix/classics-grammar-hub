@@ -952,5 +952,62 @@
       }
     ],
     "tags": ["preposition", "ablative"]
+  },
+  {
+    "id": "lat-prep-both-in",
+    "language": "latin",
+    "type": "vocabulary",
+    "title": "Preposition: In (+ Accusative / Ablative)",
+    "description": "Takes the accusative case to show motion into, onto, or toward. Takes the ablative case to show location in, on, or at.",
+    "formula": "in + Noun (Accusative = Motion Into) | in + Noun (Ablative = Location In)",
+    "examples": [
+      {
+        "text": "In urbem currit.",
+        "translation": "He runs into the city. (Accusative - Motion)"
+      },
+      {
+        "text": "In urbe vivit.",
+        "translation": "He lives in the city. (Ablative - Location)"
+      }
+    ],
+    "tags": ["preposition", "accusative", "ablative"]
+  },
+  {
+    "id": "lat-prep-both-sub",
+    "language": "latin",
+    "type": "vocabulary",
+    "title": "Preposition: Sub (+ Accusative / Ablative)",
+    "description": "Takes the accusative case to express motion under or up to the foot of. Takes the ablative case to express position under, below, or at the foot of.",
+    "formula": "sub + Noun (Accusative = Motion Under) | sub + Noun (Ablative = Position Under)",
+    "examples": [
+      {
+        "text": "Sub montem dicitur.",
+        "translation": "He marches up to the foot of the mountain. (Accusative - Motion)"
+      },
+      {
+        "text": "Sub arbore sedet.",
+        "translation": "She sits under the tree. (Ablative - Position)"
+      }
+    ],
+    "tags": ["preposition", "accusative", "ablative"]
+  },
+  {
+    "id": "lat-prep-both-super",
+    "language": "latin",
+    "type": "vocabulary",
+    "title": "Preposition: Super (+ Accusative / Ablative)",
+    "description": "Takes the accusative case to mean over, above, or beyond (often with motion). Takes the ablative case to mean concerning, about, or upon (typically stationary).",
+    "formula": "super + Noun (Accusative = Over/Above) | super + Noun (Ablative = Concerning/Upon)",
+    "examples": [
+      {
+        "text": "Super eam saltat.",
+        "translation": "He leaps over her. (Accusative - Direction)"
+      },
+      {
+        "text": "Hac super re scribit.",
+        "translation": "He writes concerning this matter. (Ablative - Topic)"
+      }
+    ],
+    "tags": ["preposition", "accusative", "ablative"]
   }
 ]
