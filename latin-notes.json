@@ -1123,5 +1123,70 @@
       }
     ],
     "tags": ["superlative"]
+  },
+  {
+    "id": "lat-subst-masculine-people",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Substantivized Adjectives: Masculine (People)",
+    "description": "Masculine adjectives used without a noun refer to people. The gender and number indicate the category of individuals (e.g., singular = 'a man/person', plural = 'men/people').",
+    "formula": "Masculine Adjective (used as a Noun)",
+    "examples": [
+      {
+        "text": "Bonus benigne facit.",
+        "translation": "A good man acts kindly."
+      },
+      {
+        "text": "Malti in urbe sunt.",
+        "translation": "Many (people) are in the city."
+      },
+      {
+        "text": "Nostri acriter pugnaverunt.",
+        "translation": "Our men fought fiercely."
+      }
+    ],
+    "tags": ["substantive", "adjective"]
+  },
+  {
+    "id": "lat-subst-neuter-things",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Substantivized Adjectives: Neuter (Things / Concepts)",
+    "description": "Neuter adjectives used without a noun refer to inanimate objects or abstract concepts (e.g., singular = 'a thing/everything', plural = 'things/possessions').",
+    "formula": "Neuter Adjective (used as a Noun)",
+    "examples": [
+      {
+        "text": "Verum dicit.",
+        "translation": "He speaks the truth (literally: 'the true thing')."
+      },
+      {
+        "text": "Omnia perdidit.",
+        "translation": "He lost everything (literally: 'all things')."
+      },
+      {
+        "text": "Bona eorum ceperunt.",
+        "translation": "They took their goods / possessions."
+      }
+    ],
+    "tags": ["substantive", "adjective"]
+  },
+  {
+    "id": "lat-subst-feminine-women",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Substantivized Adjectives: Feminine (Women)",
+    "description": "Feminine adjectives used without a noun refer specifically to female individuals or groups of women.",
+    "formula": "Feminine Adjective (used as a Noun)",
+    "examples": [
+      {
+        "text": "Bona filium amat.",
+        "translation": "A good woman loves her son."
+      },
+      {
+        "text": "Mmultae venerunt.",
+        "translation": "Many women came."
+      }
+    ],
+    "tags": ["substantive", "adjective"]
   }
 ]
