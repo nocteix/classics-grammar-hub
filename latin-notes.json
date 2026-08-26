@@ -1188,5 +1188,62 @@
       }
     ],
     "tags": ["substantive", "adjective"]
+  },
+  {
+    "id": "lat-pron-personal",
+    "language": "latin",
+    "type": "morphology",
+    "title": "Pronouns: Personal Pronouns (Ego, Tu, Nos, Vos)",
+    "description": "Used for 1st and 2nd person subjects/objects. Latin omits nominative personal pronouns unless needed for emphasis or contrast. Note: Latin lacks a dedicated 3rd-person personal pronoun, using demonstratives (is, ea, id) instead.",
+    "formula": "1st/2nd Person Declension Paradigms",
+    "examples": [
+      {
+        "text": "Ego te video, tu me non vides.",
+        "translation": "I see you, but you do not see me. (Emphasis on subjects)"
+      },
+      {
+        "text": "Nobis vobiscum eundum est.",
+        "translation": "We must go with you."
+      }
+    ],
+    "tags": ["pronoun"]
+  },
+  {
+    "id": "lat-pron-possessive",
+    "language": "latin",
+    "type": "morphology",
+    "title": "Pronouns: Possessive Pronouns / Adjectives (Meus, Tuus, Suus, Noster, Vester)",
+    "description": "Decline like 1st/2nd declension adjectives and agree in gender, number, and case with the noun possessed (NOT the possessor). 'Suus, -a, -um' is reflexive, referring back to the subject.",
+    "formula": "Meus (-a, -um) | Tuus (-a, -um) | Suus (-a, -um) | Noster (-tra, -trum) | Vester (-tra, -trum)",
+    "examples": [
+      {
+        "text": "Marcus librum suum legit.",
+        "translation": "Marcus reads his own book. (Reflexive possession)"
+      },
+      {
+        "text": "Amici nostri in villa nostra sunt.",
+        "translation": "Our friends are in our villa."
+      }
+    ],
+    "tags": ["pronoun", "adjective"]
+  },
+  {
+    "id": "lat-pron-reflexive",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Pronouns: Reflexive Pronouns (Sui, Sibi, Se, Se)",
+    "description": "Refers back to the subject of the clause (3rd person singular and plural). Has no nominative form because a subject cannot be its own object.",
+    "formula": "Genitive: sui | Dative: sibi | Accusative: se | Ablative: se",
+    "examples": [
+      {
+        "text": "Militem se defendere videt.",
+        "translation": "He sees the soldier defending himself."
+      },
+      {
+        "text": "Sibi nihil postulant.",
+        "translation": "They demand nothing for themselves."
+      }
+    ],
+    "tags": ["pronoun"]
   }
 ]
