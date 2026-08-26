@@ -629,5 +629,252 @@
       }
     ],
     "tags": ["ablative"]
+  },
+  {
+    "id": "lat-prep-acc-ad",
+    "language": "latin",
+    "type": "vocabulary",
+    "title": "Preposition: Ad (+ Accusative)",
+    "description": "Always takes the accusative case to indicate motion toward, to, near, at, or for the purpose of.",
+    "formula": "ad + Noun (Accusative)",
+    "examples": [
+      {
+        "text": "Ad urbem festinat.",
+        "translation": "He hurries to the city."
+      },
+      {
+        "text": "Ad januam stat.",
+        "translation": "He stands at the door."
+      }
+    ],
+    "tags": ["preposition", "accusative"]
+  },
+  {
+    "id": "lat-prep-acc-adversus",
+    "language": "latin",
+    "type": "vocabulary",
+    "title": "Preposition: Adversus / Adversum (+ Accusative)",
+    "description": "Always takes the accusative case to express direction toward, facing, against, or in relation to.",
+    "formula": "adversus + Noun (Accusative)",
+    "examples": [
+      {
+        "text": "Adversus hostes pugnant.",
+        "translation": "They fight against the enemy."
+      },
+      {
+        "text": "Adversus montem stabat.",
+        "translation": "He was standing facing the mountain."
+      }
+    ],
+    "tags": ["preposition", "accusative"]
+  },
+  {
+    "id": "lat-prep-acc-contra",
+    "language": "latin",
+    "type": "vocabulary",
+    "title": "Preposition: Contra (+ Accusative)",
+    "description": "Always takes the accusative case to mean against, opposite to, or in opposition to.",
+    "formula": "contra + Noun (Accusative)",
+    "examples": [
+      {
+        "text": "Contra legem fecit.",
+        "translation": "He acted against the law."
+      },
+      {
+        "text": "Contra Italiam situm est.",
+        "translation": "It is situated opposite Italy."
+      }
+    ],
+    "tags": ["preposition", "accusative"]
+  },
+  {
+    "id": "lat-prep-acc-ante",
+    "language": "latin",
+    "type": "vocabulary",
+    "title": "Preposition: Ante (+ Accusative)",
+    "description": "Always takes the accusative case to denote location in front of or time before.",
+    "formula": "ante + Noun (Accusative)",
+    "examples": [
+      {
+        "text": "Ante portas stant.",
+        "translation": "They stand before/in front of the gates."
+      },
+      {
+        "text": "Ante lucem surrexit.",
+        "translation": "He arose before dawn."
+      }
+    ],
+    "tags": ["preposition", "accusative"]
+  },
+  {
+    "id": "lat-prep-acc-apud",
+    "language": "latin",
+    "type": "vocabulary",
+    "title": "Preposition: Apud (+ Accusative)",
+    "description": "Always takes the accusative case to express among, at the house of, in the presence of, or in the writings of.",
+    "formula": "apud + Noun (Accusative)",
+    "examples": [
+      {
+        "text": "Apud amicos cenat.",
+        "translation": "He dines at the house of friends."
+      },
+      {
+        "text": "Apud Ciceronem legitur.",
+        "translation": "It is read in [the works of] Cicero."
+      }
+    ],
+    "tags": ["preposition", "accusative"]
+  },
+  {
+    "id": "lat-prep-acc-circa",
+    "language": "latin",
+    "type": "vocabulary",
+    "title": "Preposition: Circa (+ Accusative)",
+    "description": "Always takes the accusative case to mean around, about, near, or concerning (spatial, temporal, or numerical).",
+    "formula": "circa + Noun (Accusative)",
+    "examples": [
+      {
+        "text": "Circa meridiem venit.",
+        "translation": "He came around noon."
+      },
+      {
+        "text": "Circa urbem vagantur.",
+        "translation": "They wander around the city."
+      }
+    ],
+    "tags": ["preposition", "accusative"]
+  },
+  {
+    "id": "lat-prep-acc-circum",
+    "language": "latin",
+    "type": "vocabulary",
+    "title": "Preposition: Circum (+ Accusative)",
+    "description": "Always takes the accusative case to express spatial location around, about, or in the vicinity of.",
+    "formula": "circum + Noun (Accusative)",
+    "examples": [
+      {
+        "text": "Circum insulam navigaverunt.",
+        "translation": "They sailed around the island."
+      },
+      {
+        "text": "Milites circum ducem stant.",
+        "translation": "The soldiers stand around the leader."
+      }
+    ],
+    "tags": ["preposition", "accusative"]
+  },
+  {
+    "id": "lat-prep-acc-cis",
+    "language": "latin",
+    "type": "vocabulary",
+    "title": "Preposition: Cis (+ Accusative)",
+    "description": "Always takes the accusative case to mean on this side of.",
+    "formula": "cis + Noun (Accusative)",
+    "examples": [
+      {
+        "text": "Cis Rhenum habitaverunt.",
+        "translation": "They lived on this side of the Rhine."
+      },
+      {
+        "text": "Cis Alpes manet.",
+        "translation": "He remains on this side of the Alps."
+      }
+    ],
+    "tags": ["preposition", "accusative"]
+  },
+  {
+    "id": "lat-prep-acc-citra",
+    "language": "latin",
+    "type": "vocabulary",
+    "title": "Preposition: Citra (+ Accusative)",
+    "description": "Always takes the accusative case to indicate location on this side of or without/short of.",
+    "formula": "citra + Noun (Accusative)",
+    "examples": [
+      {
+        "text": "Citra flumen castra posuerunt.",
+        "translation": "They pitched camp on this side of the river."
+      },
+      {
+        "text": "Citra necessitatem.",
+        "translation": "Short of necessity / without need."
+      }
+    ],
+    "tags": ["preposition", "accusative"]
+  },
+  {
+    "id": "lat-prep-acc-erga",
+    "language": "latin",
+    "type": "vocabulary",
+    "title": "Preposition: Erga (+ Accusative)",
+    "description": "Always takes the accusative case to mean towards, regarding, or in relation to (typically expressing feelings or attitudes towards people).",
+    "formula": "erga + Noun (Accusative)",
+    "examples": [
+      {
+        "text": "Amor erga parentes.",
+        "translation": "Love towards one's parents."
+      },
+      {
+        "text": "Benivolentia erga nos.",
+        "translation": "Goodwill towards us."
+      }
+    ],
+    "tags": ["preposition", "accusative"]
+  },
+  {
+    "id": "lat-prep-acc-extra",
+    "language": "latin",
+    "type": "vocabulary",
+    "title": "Preposition: Extra (+ Accusative)",
+    "description": "Always takes the accusative case to mean outside of, beyond, or except.",
+    "formula": "extra + Noun (Accusative)",
+    "examples": [
+      {
+        "text": "Extra muros urbis.",
+        "translation": "Outside the walls of the city."
+      },
+      {
+        "text": "Extra culpam est.",
+        "translation": "He is beyond blame (blameless)."
+      }
+    ],
+    "tags": ["preposition", "accusative"]
+  },
+  {
+    "id": "lat-prep-acc-infra",
+    "language": "latin",
+    "type": "vocabulary",
+    "title": "Preposition: Infra (+ Accusative)",
+    "description": "Always takes the accusative case to indicate location below, underneath, or inferior to.",
+    "formula": "infra + Noun (Accusative)",
+    "examples": [
+      {
+        "text": "Infra caelum.",
+        "translation": "Below the sky / under heaven."
+      },
+      {
+        "text": "Infra dignitatem.",
+        "translation": "Below one's dignity."
+      }
+    ],
+    "tags": ["preposition", "accusative"]
+  },
+  {
+    "id": "lat-prep-acc-inter",
+    "language": "latin",
+    "type": "vocabulary",
+    "title": "Preposition: Inter (+ Accusative)",
+    "description": "Always takes the accusative case to mean between, among, or during.",
+    "formula": "inter + Noun (Accusative)",
+    "examples": [
+      {
+        "text": "Inter silvam et flumen.",
+        "translation": "Between the forest and the river."
+      },
+      {
+        "text": "Inter viam loquebantur.",
+        "translation": "They were talking during the journey."
+      }
+    ],
+    "tags": ["preposition", "accusative"]
   }
 ]
