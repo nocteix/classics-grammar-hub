@@ -1066,5 +1066,62 @@
       }
     ],
     "tags": ["comparative"]
+  },
+  {
+    "id": "lat-superl-relative",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Superlative: Relative Comparison (Gradus Superlativus)",
+    "description": "Used to denote the highest degree of a quality among a group of three or more entities ('the most' / '-est'). Often paired with a Partitive Genitive, 'ex/e', or 'inter' + accusative.",
+    "formula": "Superlative Adjective + Noun (Partitive Genitive / Ex + Ablative)",
+    "examples": [
+      {
+        "text": "Altissima omnium montium.",
+        "translation": "The highest of all mountains."
+      },
+      {
+        "text": "Fortissimus ex omnibus militibus.",
+        "translation": "The bravest out of all the soldiers."
+      }
+    ],
+    "tags": ["superlative"]
+  },
+  {
+    "id": "lat-superl-absolute",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Superlative: Absolute / Elative Use ('Very' / 'Exceedingly')",
+    "description": "Used without a group for direct comparison to express an exceptionally high degree of a quality. Translated as 'very', 'exceedingly', or 'extremely'.",
+    "formula": "Superlative Adjective (Standalone)",
+    "examples": [
+      {
+        "text": "Vir prudentissimus est.",
+        "translation": "He is a very wise / exceedingly wise man."
+      },
+      {
+        "text": "Mons altissimus est.",
+        "translation": "The mountain is extremely high."
+      }
+    ],
+    "tags": ["superlative"]
+  },
+  {
+    "id": "lat-superl-quam",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Superlative: Strengthened with 'Quam' ('As ... as possible')",
+    "description": "When paired with 'quam', the superlative expresses the highest degree possible ('as [X] as possible'). Frequently used with forms of 'posse'.",
+    "formula": "Quam + Superlative Adjective (+ Form of Posse)",
+    "examples": [
+      {
+        "text": "Quam maximas copias comparat.",
+        "translation": "He gathers as large troops as possible."
+      },
+      {
+        "text": "Quam celerrime potuit venit.",
+        "translation": "He came as quickly as he could."
+      }
+    ],
+    "tags": ["superlative"]
   }
 ]
