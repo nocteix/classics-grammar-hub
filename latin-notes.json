@@ -99,4 +99,138 @@
     "mnemonic": "Literal: [Thing] exists to [Person] → Person has Thing.",
     "tags": ["dative", "possession"]
   }
+  [
+  {
+    id: "lat-gen-possession",
+    language: "latin",
+    type: "syntax",
+    title: "Genitive of Possession (Genitivus Possessivus)",
+    description: "Indicates the owner or possessor of a person, object, or property.",
+    formula: "Noun (Genitive) + Noun (Possession)",
+    examples: [
+      {
+        text: "domus Caesaris",
+        translation: "the house of Caesar / Caesar's house"
+      },
+      {
+        text: "libri discipuli",
+        translation: "the books of the student"
+      }
+    ],
+    tags: ["genitive", "possession", "syntax"]
+  },
+  {
+    id: "lat-gen-objective",
+    language: "latin",
+    type: "syntax",
+    title: "Objective Genitive (Genitivus Objectivus)",
+    description: "Acts as the direct object of the action implied by a noun or adjective of feeling, agency, or desire.",
+    formula: "Noun/Adjective + Noun (Genitive)",
+    examples: [
+      {
+        text: "amor patriae",
+        translation: "love of fatherland (loving the fatherland)"
+      },
+      {
+        text: "cupidus gloriae",
+        translation: "desirous of glory"
+      }
+    ],
+    tags: ["genitive", "objective", "syntax"]
+  },
+  {
+    id: "lat-gen-quality",
+    language: "latin",
+    type: "syntax",
+    title: "Genitive of Quality (Genitivus Qualitatis)",
+    description: "Used with a modifying adjective to describe an essential feature, measure, or characteristic of a person or thing.",
+    formula: "Noun + [Adjective + Noun] (Genitive)",
+    examples: [
+      {
+        text: "vir magnae virtutis",
+        translation: "a man of great courage"
+      },
+      {
+        text: "fossa trium pedum",
+        translation: "a trench of three feet"
+      }
+    ],
+    tags: ["genitive", "quality", "description", "syntax"]
+  },
+  {
+    id: "lat-gen-partitive",
+    language: "latin",
+    type: "syntax",
+    title: "Partitive Genitive (Genitivus Partitivus)",
+    description: "Denotes the whole entity from which a part or portion is taken.",
+    formula: "Quantity/Number + Noun (Genitive)",
+    examples: [
+      {
+        text: "pars militum",
+        translation: "part of the soldiers"
+      },
+      {
+        text: "nihil novi",
+        translation: "nothing of new / nothing new"
+      }
+    ],
+    tags: ["genitive", "partitive", "syntax"]
+  },
+  {
+    id: "lat-gen-cause",
+    language: "latin",
+    type: "syntax",
+    title: "Genitive of Cause (Genitivus Causae)",
+    description: "Used primarily with postpositive prepositions like causa or gratia to express purpose or motive.",
+    formula: "Noun (Genitive) + causa / gratia",
+    examples: [
+      {
+        text: "reipublicae causa",
+        translation: "for the sake of the republic"
+      },
+      {
+        text: "exempli gratia",
+        translation: "for the sake of example"
+      }
+    ],
+    tags: ["genitive", "cause", "purpose", "syntax"]
+  },
+  {
+    id: "lat-gen-memory",
+    language: "latin",
+    type: "syntax",
+    title: "Genitive with Verbs of Memory (Genitivus Memoriae)",
+    description: "Used with verbs like memini (remember), reminiscor (recollect), and obliviscor (forget) to mark the target of remembrance.",
+    formula: "Verb of Memory + Person/Thing (Genitive)",
+    examples: [
+      {
+        text: "vivorum memini",
+        translation: "I remember the living"
+      },
+      {
+        text: "injuriae obliviscor",
+        translation: "I forget the injury"
+      }
+    ],
+    tags: ["genitive", "memory", "verbs", "syntax"]
+  },
+  {
+    id: "lat-gen-value",
+    language: "latin",
+    type: "syntax",
+    title: "Genitive of Price or Value (Genitivus Pretii)",
+    description: "Indicates indefinite or relative value using neuter adjectives in the genitive case with verbs of valuing or estimating.",
+    formula: "Verb of Estimating + Neuter Adjective (Genitive)",
+    examples: [
+      {
+        text: "magni aestimare",
+        translation: "to value highly / to esteem of great worth"
+      },
+      {
+        text: "parvi ducere",
+        translation: "to consider of little value"
+      }
+    ],
+    tags: ["genitive", "value", "price", "syntax"]
+  }
 ]
