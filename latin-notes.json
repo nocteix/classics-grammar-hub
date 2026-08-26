@@ -1,7 +1,7 @@
 [
   {
     "id": "lat-syntax-ind-statement",
-    "type": "syntax_rule",
+    "type": "syntax",
     "language": "latin",
     "title": "Indirect Statement (Oratio Obliqua)",
     "description": "Used after verbs of saying, thinking, knowing, or perceiving (head verbs). The subject of the clause shifts to the Accusative case, and the verb becomes an Infinitive.",
@@ -21,7 +21,7 @@
   },
   {
     "id": "lat-syntax-cum-clause",
-    "type": "syntax_rule",
+    "type": "syntax",
     "language": "latin",
     "title": "Cum Clauses",
     "description": "Subordinate clauses introduced by 'cum'. Indicative denotes pure time ('when'). Subjunctive expresses circumstantial context ('when/while'), causal reason ('since'), or concessive contrast ('although').",
@@ -41,7 +41,7 @@
   },
   {
     "id": "lat-syntax-passive-periphrastic",
-    "type": "syntax_rule",
+    "type": "syntax",
     "language": "latin",
     "title": "Passive Periphrastic (Gerundive of Obligation)",
     "description": "Expresses necessity or obligation using the Gerundive (-ndus, -nda, -ndum) combined with a form of 'esse'. The person performing the action takes the Dative case (Dative of Agent).",
@@ -61,7 +61,7 @@
   },
   {
     "id": "lat-syntax-purpose-clause",
-    "type": "syntax_rule",
+    "type": "syntax",
     "language": "latin",
     "title": "Purpose Clause (Final Clause)",
     "description": "Subordinate clause indicating intent or purpose. Introduced by 'ut' (positive) or 'ne' (negative), taking a subjunctive verb. Never use an infinitive to express purpose in prose Latin.",
@@ -81,7 +81,7 @@
   },
   {
     "id": "lat-syntax-dative-possession",
-    "type": "syntax_rule",
+    "type": "syntax",
     "language": "latin",
     "title": "Dative of Possession",
     "description": "Used with forms of 'esse' to express ownership. The item owned acts as the nominative subject, and the owner is put into the dative case.",
@@ -98,139 +98,138 @@
     ],
     "mnemonic": "Literal: [Thing] exists to [Person] → Person has Thing.",
     "tags": ["dative", "possession"]
-  }
-  [
-  {
-    id: "lat-gen-possession",
-    language: "latin",
-    type: "syntax",
-    title: "Genitive of Possession (Genitivus Possessivus)",
-    description: "Indicates the owner or possessor of a person, object, or property.",
-    formula: "Noun (Genitive) + Noun (Possession)",
-    examples: [
-      {
-        text: "domus Caesaris",
-        translation: "the house of Caesar / Caesar's house"
-      },
-      {
-        text: "libri discipuli",
-        translation: "the books of the student"
-      }
-    ],
-    tags: ["genitive", "possession", "syntax"]
   },
   {
-    id: "lat-gen-objective",
-    language: "latin",
-    type: "syntax",
-    title: "Objective Genitive (Genitivus Objectivus)",
-    description: "Acts as the direct object of the action implied by a noun or adjective of feeling, agency, or desire.",
-    formula: "Noun/Adjective + Noun (Genitive)",
-    examples: [
+    "id": "lat-gen-possession",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Genitive of Possession (Genitivus Possessivus)",
+    "description": "Indicates the owner or possessor of a person, object, or property.",
+    "formula": "Noun (Genitive) + Noun (Possession)",
+    "examples": [
       {
-        text: "amor patriae",
-        translation: "love of fatherland (loving the fatherland)"
+        "text": "domus Caesaris",
+        "translation": "the house of Caesar / Caesar's house"
       },
       {
-        text: "cupidus gloriae",
-        translation: "desirous of glory"
+        "text": "libri discipuli",
+        "translation": "the books of the student"
       }
     ],
-    tags: ["genitive", "objective", "syntax"]
+    "tags": ["genitive", "possession"]
   },
   {
-    id: "lat-gen-quality",
-    language: "latin",
-    type: "syntax",
-    title: "Genitive of Quality (Genitivus Qualitatis)",
-    description: "Used with a modifying adjective to describe an essential feature, measure, or characteristic of a person or thing.",
-    formula: "Noun + [Adjective + Noun] (Genitive)",
-    examples: [
+    "id": "lat-gen-objective",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Objective Genitive (Genitivus Objectivus)",
+    "description": "Acts as the direct object of the action implied by a noun or adjective of feeling, agency, or desire.",
+    "formula": "Noun/Adjective + Noun (Genitive)",
+    "examples": [
       {
-        text: "vir magnae virtutis",
-        translation: "a man of great courage"
+        "text": "amor patriae",
+        "translation": "love of fatherland (loving the fatherland)"
       },
       {
-        text: "fossa trium pedum",
-        translation: "a trench of three feet"
+        "text": "cupidus gloriae",
+        "translation": "desirous of glory"
       }
     ],
-    tags: ["genitive", "quality", "description", "syntax"]
+    "tags": ["genitive", "objective"]
   },
   {
-    id: "lat-gen-partitive",
-    language: "latin",
-    type: "syntax",
-    title: "Partitive Genitive (Genitivus Partitivus)",
-    description: "Denotes the whole entity from which a part or portion is taken.",
-    formula: "Quantity/Number + Noun (Genitive)",
-    examples: [
+    "id": "lat-gen-quality",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Genitive of Quality (Genitivus Qualitatis)",
+    "description": "Used with a modifying adjective to describe an essential feature, measure, or characteristic of a person or thing.",
+    "formula": "Noun + [Adjective + Noun] (Genitive)",
+    "examples": [
       {
-        text: "pars militum",
-        translation: "part of the soldiers"
+        "text": "vir magnae virtutis",
+        "translation": "a man of great courage"
       },
       {
-        text: "nihil novi",
-        translation: "nothing of new / nothing new"
+        "text": "fossa trium pedum",
+        "translation": "a trench of three feet"
       }
     ],
-    tags: ["genitive", "partitive", "syntax"]
+    "tags": ["genitive", "quality", "description"]
   },
   {
-    id: "lat-gen-cause",
-    language: "latin",
-    type: "syntax",
-    title: "Genitive of Cause (Genitivus Causae)",
-    description: "Used primarily with postpositive prepositions like causa or gratia to express purpose or motive.",
-    formula: "Noun (Genitive) + causa / gratia",
-    examples: [
+    "id": "lat-gen-partitive",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Partitive Genitive (Genitivus Partitivus)",
+    "description": "Denotes the whole entity from which a part or portion is taken.",
+    "formula": "Quantity/Number + Noun (Genitive)",
+    "examples": [
       {
-        text: "reipublicae causa",
-        translation: "for the sake of the republic"
+        "text": "pars militum",
+        "translation": "part of the soldiers"
       },
       {
-        text: "exempli gratia",
-        translation: "for the sake of example"
+        "text": "nihil novi",
+        "translation": "nothing of new / nothing new"
       }
     ],
-    tags: ["genitive", "cause", "purpose", "syntax"]
+    "tags": ["genitive", "partitive"]
   },
   {
-    id: "lat-gen-memory",
-    language: "latin",
-    type: "syntax",
-    title: "Genitive with Verbs of Memory (Genitivus Memoriae)",
-    description: "Used with verbs like memini (remember), reminiscor (recollect), and obliviscor (forget) to mark the target of remembrance.",
-    formula: "Verb of Memory + Person/Thing (Genitive)",
-    examples: [
+    "id": "lat-gen-cause",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Genitive of Cause (Genitivus Causae)",
+    "description": "Used primarily with postpositive prepositions like causa or gratia to express purpose or motive.",
+    "formula": "Noun (Genitive) + causa / gratia",
+    "examples": [
       {
-        text: "vivorum memini",
-        translation: "I remember the living"
+        "text": "reipublicae causa",
+        "translation": "for the sake of the republic"
       },
       {
-        text: "injuriae obliviscor",
-        translation: "I forget the injury"
+        "text": "exempli gratia",
+        "translation": "for the sake of example"
       }
     ],
-    tags: ["genitive", "memory", "verbs", "syntax"]
+    "tags": ["genitive", "cause", "purpose"]
   },
   {
-    id: "lat-gen-value",
-    language: "latin",
-    type: "syntax",
-    title: "Genitive of Price or Value (Genitivus Pretii)",
-    description: "Indicates indefinite or relative value using neuter adjectives in the genitive case with verbs of valuing or estimating.",
-    formula: "Verb of Estimating + Neuter Adjective (Genitive)",
-    examples: [
+    "id": "lat-gen-memory",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Genitive with Verbs of Memory (Genitivus Memoriae)",
+    "description": "Used with verbs like memini (remember), reminiscor (recollect), and obliviscor (forget) to mark the target of remembrance.",
+    "formula": "Verb of Memory + Person/Thing (Genitive)",
+    "examples": [
       {
-        text: "magni aestimare",
-        translation: "to value highly / to esteem of great worth"
+        "text": "vivorum memini",
+        "translation": "I remember the living"
       },
       {
-        text: "parvi ducere",
-        translation: "to consider of little value"
+        "text": "injuriae obliviscor",
+        "translation": "I forget the injury"
       }
     ],
-    tags: ["genitive", "value", "price", "syntax"]
+    "tags": ["genitive", "memory", "verbs"]
+  },
+  {
+    "id": "lat-gen-value",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Genitive of Price or Value (Genitivus Pretii)",
+    "description": "Indicates indefinite or relative value using neuter adjectives in the genitive case with verbs of valuing or estimating.",
+    "formula": "Verb of Estimating + Neuter Adjective (Genitive)",
+    "examples": [
+      {
+        "text": "magni aestimare",
+        "translation": "to value highly / to esteem of great worth"
+      },
+      {
+        "text": "parvi ducere",
+        "translation": "to consider of little value"
+      }
+    ],
+    "tags": ["genitive", "value", "price"]
   }
 ]
