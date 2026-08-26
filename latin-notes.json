@@ -24,7 +24,7 @@
     "type": "syntax",
     "language": "latin",
     "title": "Cum Clauses",
-    "description": "Subordinate clauses introduced by 'cum'. Indicative denotes pure time ('when'). Subjunctive expresses circumstantial context ('when/while'), causal reason ('since'), or concessive contrast ('although').",
+    "description": "Subordinate clauses introduced by cum. Indicative denotes pure time (when). Subjunctive expresses circumstantial context (when/while), causal reason (since), or concessive contrast (although).",
     "formula": "Cum + Indicative (Temporal) OR Subjunctive (Circumstantial/Causal/Concessive)",
     "examples": [
       {
@@ -36,7 +36,7 @@
         "translation": "Although the city is small, it is nevertheless bravely defended."
       }
     ],
-    "mnemonic": "Cum + Subjunctive = When, Since, or Although (tamen points to 'although').",
+    "mnemonic": "Cum + Subjunctive = When, Since, or Although (tamen points to although).",
     "tags": ["subjunctive", "subordinate"]
   },
   {
@@ -44,7 +44,7 @@
     "type": "syntax",
     "language": "latin",
     "title": "Passive Periphrastic (Gerundive of Obligation)",
-    "description": "Expresses necessity or obligation using the Gerundive (-ndus, -nda, -ndum) combined with a form of 'esse'. The person performing the action takes the Dative case (Dative of Agent).",
+    "description": "Expresses necessity or obligation using the Gerundive (-ndus, -nda, -ndum) combined with a form of esse. The person performing the action takes the Dative case (Dative of Agent).",
     "formula": "Gerundive + Form of Sum + Dative (Agent)",
     "examples": [
       {
@@ -64,7 +64,7 @@
     "type": "syntax",
     "language": "latin",
     "title": "Purpose Clause (Final Clause)",
-    "description": "Subordinate clause indicating intent or purpose. Introduced by 'ut' (positive) or 'ne' (negative), taking a subjunctive verb. Never use an infinitive to express purpose in prose Latin.",
+    "description": "Subordinate clause indicating intent or purpose. Introduced by ut (positive) or ne (negative), taking a subjunctive verb. Never use an infinitive to express purpose in prose Latin.",
     "formula": "Ut / Ne + Subjunctive Verb",
     "examples": [
       {
@@ -84,7 +84,7 @@
     "type": "syntax",
     "language": "latin",
     "title": "Dative of Possession",
-    "description": "Used with forms of 'esse' to express ownership. The item owned acts as the nominative subject, and the owner is put into the dative case.",
+    "description": "Used with forms of esse to express ownership. The item owned acts as the nominative subject, and the owner is put into the dative case.",
     "formula": "Thing Possessed (Nominative) + Form of Sum + Owner (Dative)",
     "examples": [
       {
