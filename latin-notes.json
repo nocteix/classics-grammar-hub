@@ -1530,5 +1530,32 @@
       }
     ],
     "tags": ["pronoun", "adjective"]
+  },
+  {
+    "id": "lat-syntax-impersonal-passive",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Impersonal Passive (Intransitive Verbs)",
+    "description": "Intransitive verbs (verbs that do not take an accusative direct object) can be used in the 3rd person singular passive form without a personal subject. It focuses purely on the action being performed ('there is [verb]ing' or 'people [verb]'). Dative objects governed by the verb remain in the dative.",
+    "formula": "3rd Person Singular Passive Verb (+ Dative / Prepositional Phrase)",
+    "examples": [
+      {
+        "text": "Pugnatur.",
+        "translation": "There is fighting / Fighting is going on (literally: 'it is fought')."
+      },
+      {
+        "text": "Acriter ab omnibus pugnatum est.",
+        "translation": "Fierce fighting was carried on by everyone."
+      },
+      {
+        "text": "Militibus a duce parciture.",
+        "translation": "The soldiers are spared by the leader (literally: 'It is spared to the soldiers by the leader')."
+      },
+      {
+        "text": "Sic itur ad astra.",
+        "translation": "Thus one goes to the stars (literally: 'Thus it is gone to the stars')."
+      }
+    ],
+    "tags": ["passive", "verb"]
   }
 ]
