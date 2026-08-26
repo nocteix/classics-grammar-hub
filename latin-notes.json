@@ -17,7 +17,7 @@
       }
     ],
     "mnemonic": "Head verb triggers Subject Accusative + Verb Infinitive.",
-    "tags": ["accusative", "infinitive", "head-verbs"]
+    "tags": ["accusative", "infinitive""]
   },
   {
     "id": "lat-syntax-cum-clause",
@@ -37,7 +37,7 @@
       }
     ],
     "mnemonic": "Cum + Subjunctive = When, Since, or Although (tamen points to although).",
-    "tags": ["subjunctive", "subordinate"]
+    "tags": ["subjunctive"]
   },
   {
     "id": "lat-syntax-passive-periphrastic",
@@ -57,7 +57,7 @@
       }
     ],
     "mnemonic": "-ND- + sum = must/should; the agent is Dative.",
-    "tags": ["gerundive", "dative", "obligation"]
+    "tags": ["gerundive", "dative"]
   },
   {
     "id": "lat-syntax-purpose-clause",
@@ -77,7 +77,7 @@
       }
     ],
     "mnemonic": "Ut = so that; Ne = lest / so that not.",
-    "tags": ["purpose", "subjunctive"]
+    "tags": ["subjunctive"]
   },
   {
     "id": "lat-syntax-dative-possession",
@@ -97,7 +97,7 @@
       }
     ],
     "mnemonic": "Literal: [Thing] exists to [Person] → Person has Thing.",
-    "tags": ["dative", "possession"]
+    "tags": ["dative"]
   },
   {
     "id": "lat-gen-possession",
@@ -116,7 +116,7 @@
         "translation": "the books of the student"
       }
     ],
-    "tags": ["genitive", "possession"]
+    "tags": ["genitive"]
   },
   {
     "id": "lat-gen-objective",
@@ -135,7 +135,7 @@
         "translation": "desirous of glory"
       }
     ],
-    "tags": ["genitive", "objective"]
+    "tags": ["genitive"]
   },
   {
     "id": "lat-gen-quality",
@@ -154,7 +154,7 @@
         "translation": "a trench of three feet"
       }
     ],
-    "tags": ["genitive", "quality", "description"]
+    "tags": ["genitive"]
   },
   {
     "id": "lat-gen-partitive",
@@ -173,7 +173,7 @@
         "translation": "nothing of new / nothing new"
       }
     ],
-    "tags": ["genitive", "partitive"]
+    "tags": ["genitive"]
   },
   {
     "id": "lat-gen-cause",
@@ -192,7 +192,7 @@
         "translation": "for the sake of example"
       }
     ],
-    "tags": ["genitive", "cause", "purpose"]
+    "tags": ["genitive"]
   },
   {
     "id": "lat-gen-memory",
@@ -211,7 +211,7 @@
         "translation": "I forget the injury"
       }
     ],
-    "tags": ["genitive", "memory", "verbs"]
+    "tags": ["genitive"]
   },
   {
     "id": "lat-gen-value",
@@ -230,6 +230,6 @@
         "translation": "to consider of little value"
       }
     ],
-    "tags": ["genitive", "value", "price"]
+    "tags": ["genitive"]
   }
 ]
