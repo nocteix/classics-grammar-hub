@@ -1615,6 +1615,98 @@
       }
     ],
     "tags": ["optative", "subjunctive"]
+  },
+    [
+  {
+    "id": "lat-syntax-hortatory-subjunctive",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Hortatory Subjunctive",
+    "description": "Expresses an exhortation, encouragement, or soft command in the first person plural ('Let us...'). The negative particle is 'ne'. (Note: Similar to Jussive Subjunctive, which covers second/third person 'let him/them...').",
+    "formula": "1st Person Plural Present Subjunctive (Negative: ne + Subjunctive)",
+    "examples": [
+      {
+        "text": "Gaudeamus igitur, iuvenes dum sumus!",
+        "translation": "Let us rejoice therefore, while we are young!"
+      },
+      {
+        "text": "Ne desperemus.",
+        "translation": "Let us not despair."
+      }
+    ],
+    "tags": ["subjunctive"]
+  },
+  {
+    "id": "lat-syntax-concessive-subjunctive",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Concessive Subjunctive",
+    "description": "Expresses a concession or assumption for the sake of argument ('Granting that...', 'Even if...', 'Suppose that...'). Often introduced by 'licet', 'quamvis', 'ut', or 'ne' (for negative concessions).",
+    "formula": "(Licet / Quamvis / Ut / Ne) + Subjunctive",
+    "examples": [
+      {
+        "text": "Fremant omnes, dicam quod sentio.",
+        "translation": "Let everyone complain, I will say what I feel."
+      },
+      {
+        "text": "Licet me meosque patres accusent.",
+        "translation": "Even if they accuse me and my ancestors..."
+      },
+      {
+        "text": "Ne sit summum malum dolor, malum certe est.",
+        "translation": "Granted that pain is not the greatest evil, it is certainly an evil."
+      }
+    ],
+    "tags": ["subjunctive"]
+  },
+  {
+    "id": "lat-syntax-deliberative-subjunctive",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Deliberative Subjunctive",
+    "description": "Used in rhetorical or deliberative questions where the speaker asks what should be done, expresses doubt, or hesitates about a course of action ('What am I to do?', 'Should I speak?'). Present subjunctive refers to present action; Imperfect subjunctive refers to past action. Negative particle is 'non'.",
+    "formula": "Present / Imperfect Subjunctive (in a question)",
+    "examples": [
+      {
+        "text": "Quid faciam?",
+        "translation": "What am I to do? / What should I do?"
+      },
+      {
+        "text": "Quid facerem?",
+        "translation": "What was I to do? / What should I have done?"
+      },
+      {
+        "text": "Eloquar an sileam?",
+        "translation": "Should I speak out or remain silent?"
+      }
+    ],
+    "tags": ["subjunctive"]
+  },
+  {
+    "id": "lat-syntax-potential-subjunctive",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Potential Subjunctive",
+    "description": "Expresses an action as possible, conditional, or polite ('one might say', 'would think', 'could happen'). Present or Perfect Subjunctive denotes present or future possibility ('might/could'); Imperfect Subjunctive denotes past possibility ('might have'). Negative particle is 'non'.",
+    "formula": "Present / Perfect / Imperfect Subjunctive",
+    "examples": [
+      {
+        "text": "Dicas eum beatum esse.",
+        "translation": "You (one) might say that he is happy."
+      },
+      {
+        "text": "Velim hoc facere.",
+        "translation": "I would like to do this. (Polite statement)"
+      },
+      {
+        "text": "Quis dubitet?",
+        "translation": "Who could doubt it?"
+      },
+      {
+        "text": "Putares eum iratum esse.",
+        "translation": "You would have thought he was angry."
+      }
+    ],
+    "tags": ["subjunctive", "possibility"]
   }
-]
 ]
