@@ -1009,5 +1009,62 @@
       }
     ],
     "tags": ["preposition", "accusative", "ablative"]
+  },
+  {
+    "id": "lat-comp-comparison",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Comparative: Pure Comparison (Gradus Comparativus)",
+    "description": "Used to compare two entities directly. Takes either 'quam' with the same case as the first noun, or the Ablative of Comparison without 'quam'.",
+    "formula": "Comparative Adjective + quam + Noun (Same Case) | Comparative Adjective + Noun (Ablative)",
+    "examples": [
+      {
+        "text": "Marcus altior est quam Quintus.",
+        "translation": "Marcus is taller than Quintus."
+      },
+      {
+        "text": "Marcus altior Quinto est.",
+        "translation": "Marcus is taller than Quintus. (Ablative of Comparison)"
+      }
+    ],
+    "tags": ["comparative", "adjective"]
+  },
+  {
+    "id": "lat-comp-intensive",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Comparative: Intensive / Absolute Use ('Very' / 'Too')",
+    "description": "Used without a reference object to express a high or excessive degree of a quality (absolute comparative). Translated as 'very', 'rather', or 'too'.",
+    "formula": "Comparative Adjective (Standalone)",
+    "examples": [
+      {
+        "text": "Senex audacior est.",
+        "translation": "The old man is rather bold / too bold."
+      },
+      {
+        "text": "Oratio longior erat.",
+        "translation": "The speech was too long / rather long."
+      }
+    ],
+    "tags": ["comparative"]
+  },
+  {
+    "id": "lat-comp-relational",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Comparative: Comparative Degree / 'Fairly' / 'More than Usual'",
+    "description": "Used to express a degree that is higher than average or expected, usually translated as 'fairly', 'somewhat', or 'more than usual'.",
+    "formula": "Comparative Adjective (In Context)",
+    "examples": [
+      {
+        "text": "Via stultior est.",
+        "translation": "The way is somewhat foolish / longer than usual."
+      },
+      {
+        "text": "Miles celerior venit.",
+        "translation": "The soldier came fairly quickly."
+      }
+    ],
+    "tags": ["comparative"]
   }
 ]
