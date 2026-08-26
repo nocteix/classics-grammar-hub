@@ -1359,5 +1359,176 @@
       }
     ],
     "tags": ["pronoun", "adjective"]
+  },
+  {
+    "id": "lat-pron-indef-aliquis",
+    "language": "latin",
+    "type": "morphology",
+    "title": "Indefinite: Aliquis, Aliquid / Aliqui, Aliqua, Aliquod ('Someone / Something / Some')",
+    "description": "Used when referring to an unspecified person, object, or quantity without strong emphasis. 'Aliquis/aliquid' acts as a pronoun ('someone/something'); 'aliqui/aliqua/aliquod' acts as an adjective ('some').",
+    "formula": "Pronoun: Aliquis (m/f), Aliquid (n) | Adjective: Aliqui (m), Aliqua (f), Aliquod (n)",
+    "examples": [
+      {
+        "text": "Aliquis ad ostium stat.",
+        "translation": "Someone is standing at the door."
+      },
+      {
+        "text": "Aliquod donum mitto.",
+        "translation": "I am sending some gift."
+      }
+    ],
+    "tags": ["pronoun", "adjective"]
+  },
+  {
+    "id": "lat-pron-indef-quis",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Indefinite: Quis, Quid / Qui, Qua, Quod after Si, Nisi, Num, Ne ('Anyone / Anything / Any')",
+    "description": "After 'si', 'nisi', 'num', or 'ne', the prefix 'ali-' drops off, and 'quis/quid' functions as the indefinite pronoun/adjective meaning 'anyone, anything, any'. Remember the rule: 'After si, nisi, num, and ne, all the ali-s fall away.'",
+    "formula": "si / nisi / num / ne + quis / quid (or qui / qua / quod)",
+    "examples": [
+      {
+        "text": "Si quis veniet, eum videbo.",
+        "translation": "If anyone comes, I will see him."
+      },
+      {
+        "text": "Ne quid nimis.",
+        "translation": "Nothing in excess (literally: 'Lest anything [be] too much')."
+      }
+    ],
+    "tags": ["pronoun"]
+  },
+  {
+    "id": "lat-pron-indef-quispiam",
+    "language": "latin",
+    "type": "morphology",
+    "title": "Indefinite: Quispiam, Quidpiam ('Somebody / Something')",
+    "description": "Expresses an indefinite person or thing with slightly more probability or expectation than 'aliquis' ('somebody or other').",
+    "formula": "Quispiam (m/f), Quidpiam / Quodpiam (n)",
+    "examples": [
+      {
+        "text": "Dicit quispiam.",
+        "translation": "Somebody or other says."
+      },
+      {
+        "text": "Forte quispiam dixerit.",
+        "translation": "Perhaps someone might say."
+      }
+    ],
+    "tags": ["pronoun"]
+  },
+  {
+    "id": "lat-pron-indef-quisquam",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Indefinite: Quisquam, Quicquam / Quidquam ('Anyone / Anything at all')",
+    "description": "Used primarily in negative sentences, rhetorical questions, or conditional clauses expecting a negative answer. Expresses 'anyone at all' or 'anything at all'. Pair with 'ullus' for the adjective form.",
+    "formula": "Quisquam (m/f), Quicquam/Quidquam (n)",
+    "examples": [
+      {
+        "text": "Nec quisquam venit.",
+        "translation": "And no one at all came (literally: 'Nor did anyone at all come')."
+      },
+      {
+        "text": "Sine ullo metu.",
+        "translation": "Without any fear at all."
+      }
+    ],
+    "tags": ["pronoun"]
+  },
+  {
+    "id": "lat-pron-indef-ullus",
+    "language": "latin",
+    "type": "morphology",
+    "title": "Indefinite Adjective: Ullus, Ulla, Ullum ('Any / Any at all')",
+    "description": "The adjective counterpart to 'quisquam'. Declines like a pronominal adjective (genitive singular '-ius', dative singular '-i') and is used in negative contexts.",
+    "formula": "Ullus (m) | Ulla (f) | Ullum (n)",
+    "examples": [
+      {
+        "text": "Sine ullō auxiliō.",
+        "translation": "Without any help."
+      },
+      {
+        "text": "Vix ulla spes est.",
+        "translation": "There is scarcely any hope."
+      }
+    ],
+    "tags": ["adjective"]
+  },
+  {
+    "id": "lat-pron-indef-quisque",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Indefinite: Quisque, Quidque / Quique, Quaeque, Quodque ('Each / Every')",
+    "description": "Distributive pronoun/adjective meaning 'each one' or 'every'. Often paired with superlatives, ordinal numbers, or reflexive pronouns ('suus').",
+    "formula": "Quisque (m/f), Quidque (n) | Quique (m), Quaeque (f), Quodque (n)",
+    "examples": [
+      {
+        "text": "Quisque domum rediit.",
+        "translation": "Each person returned home."
+      },
+      {
+        "text": "Optimus quisque.",
+        "translation": "All the best men (literally: 'Each best person')."
+      }
+    ],
+    "tags": ["pronoun"]
+  },
+  {
+    "id": "lat-pron-indef-uterque",
+    "language": "latin",
+    "type": "morphology",
+    "title": "Pronominal Adjective: Uterque, Utraque, Utrumque ('Each of two / Both')",
+    "description": "Refers to two items or individuals taken separately ('each of the two', 'both'). Declines like 'uter' with the suffix '-que'. Takes a singular verb.",
+    "formula": "Uterque (m) | Utraque (f) | Utrumque (n)",
+    "examples": [
+      {
+        "text": "Uterque dux aderat.",
+        "translation": "Each leader (of the two) was present."
+      },
+      {
+        "text": "In utraque parte.",
+        "translation": "On both sides (literally: 'on each of the two sides')."
+      }
+    ],
+    "tags": ["pronoun", "adjective"]
+  },
+  {
+    "id": "lat-pron-indef-alius",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Pronominal Adjective: Alius, Alia, Aliud ('Another / Other')",
+    "description": "Refers to another or other among three or more. When repeated in a sentence ('alius... alius'), it expresses reciprocal or distributed action ('one... another', 'some... others').",
+    "formula": "Alius (m) | Alia (f) | Aliud (n)",
+    "examples": [
+      {
+        "text": "Alius aliud dicit.",
+        "translation": "One says one thing, another says another."
+      },
+      {
+        "text": "Alii venerunt, alii manserunt.",
+        "translation": "Some came, others stayed."
+      }
+    ],
+    "tags": ["pronoun", "adjective"]
+  },
+  {
+    "id": "lat-pron-indef-alter",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Pronominal Adjective: Alter, Altera, Alterum ('The other of two / Second')",
+    "description": "Refers specifically to one of two entities ('the other', 'the second'). When repeated ('alter... alter'), it means 'the one... the other'.",
+    "formula": "Alter (m) | Altera (f) | Alterum (n)",
+    "examples": [
+      {
+        "text": "Alter pugnat, alter fugit.",
+        "translation": "The one fights, the other flees."
+      },
+      {
+        "text": "In altera manu.",
+        "translation": "In the other hand."
+      }
+    ],
+    "tags": ["pronoun", "adjective"]
   }
 ]
