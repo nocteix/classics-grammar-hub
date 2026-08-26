@@ -1245,5 +1245,119 @@
       }
     ],
     "tags": ["pronoun"]
+  },
+  {
+    "id": "lat-pron-dem-hic",
+    "language": "latin",
+    "type": "morphology",
+    "title": "Demonstrative: Hic, Haec, Hoc ('This / These')",
+    "description": "Demonstrative pronoun/adjective referring to something close to the speaker in space, time, or thought ('this near me'). Also used as a 3rd person pronoun.",
+    "formula": "Hic (m) | Haec (f) | Hoc (n)",
+    "examples": [
+      {
+        "text": "Hic vir in hac urbe vivit.",
+        "translation": "This man lives in this city."
+      },
+      {
+        "text": "Haec dixit.",
+        "translation": "He said these things."
+      }
+    ],
+    "tags": ["pronoun", "adjective"]
+  },
+  {
+    "id": "lat-pron-dem-iste",
+    "language": "latin",
+    "type": "morphology",
+    "title": "Demonstrative: Iste, Ista, Istud ('That of yours')",
+    "description": "Demonstrative pronoun/adjective referring to something associated with the listener ('that near you'). Frequently carries a contemptuous or hostile tone ('that miserable...').",
+    "formula": "Iste (m) | Ista (f) | Istud (n)",
+    "examples": [
+      {
+        "text": "Iste homo me accusat.",
+        "translation": "That man of yours (that fellow) accuses me."
+      },
+      {
+        "text": "Quid est istud?",
+        "translation": "What is that (thing near you)?"
+      }
+    ],
+    "tags": ["pronoun", "adjective"]
+  },
+  {
+    "id": "lat-pron-dem-ille",
+    "language": "latin",
+    "type": "morphology",
+    "title": "Demonstrative: Ille, Illa, Illud ('That / Those')",
+    "description": "Demonstrative pronoun/adjective referring to something distant from both speaker and listener ('that over there'). Can also mean 'the famous' or 'that well-known'.",
+    "formula": "Ille (m) | Illa (f) | Illud (n)",
+    "examples": [
+      {
+        "text": "Ille mons altissimus est.",
+        "translation": "That mountain over there is very high."
+      },
+      {
+        "text": "Ille Caesar venit.",
+        "translation": "The famous Caesar comes."
+      }
+    ],
+    "tags": ["pronoun", "adjective"]
+  },
+  {
+    "id": "lat-pron-dem-is",
+    "language": "latin",
+    "type": "morphology",
+    "title": "Demonstrative / Personal: Is, Ea, Id ('This / That / He, She, It')",
+    "description": "Weak demonstrative meaning 'this' or 'that' without strong spatial emphasis. Serves as the standard 3rd person personal pronoun (he, she, it, they) and antecedent to relative pronouns.",
+    "formula": "Is (m) | Ea (f) | Id (n)",
+    "examples": [
+      {
+        "text": "Eum in via vidi.",
+        "translation": "I saw him on the street."
+      },
+      {
+        "text": "Is qui dicit errat.",
+        "translation": "He who speaks is mistaken."
+      }
+    ],
+    "tags": ["pronoun"]
+  },
+  {
+    "id": "lat-pron-dem-idem",
+    "language": "latin",
+    "type": "morphology",
+    "title": "Demonstrative: Idem, Eadem, Idem ('The Same')",
+    "description": "Determinative pronoun/adjective formed by adding the suffix '-dem' to the forms of 'is, ea, id'. Expresses identity.",
+    "formula": "Idem (m) | Eadem (f) | Idem (n)",
+    "examples": [
+      {
+        "text": "Eandem fabulam audit.",
+        "translation": "She hears the same story."
+      },
+      {
+        "text": "Idem semper dicunt.",
+        "translation": "They always say the same thing."
+      }
+    ],
+    "tags": ["pronoun"]
+  },
+  {
+    "id": "lat-pron-dem-ipse",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Intensifying Pronoun: Ipse, Ipsa, Ipsum ('-self / Very / Himself')",
+    "description": "Intensifying (emphatic) pronoun or adjective used to emphasize a noun or pronoun ('himself', 'herself', 'the very ones'). Unlike reflexive pronouns, it does NOT refer back as an object; it adds emphasis.",
+    "formula": "Ipse (m) | Ipsa (f) | Ipsum (n)",
+    "examples": [
+      {
+        "text": "Rex ipse locutus est.",
+        "translation": "The king himself spoke."
+      },
+      {
+        "text": "In eo ipso loco mansit.",
+        "translation": "He stayed in that very place."
+      }
+    ],
+    "tags": ["pronoun", "adjective"]
   }
 ]
