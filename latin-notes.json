@@ -876,5 +876,81 @@
       }
     ],
     "tags": ["preposition", "accusative"]
+  },
+  {
+    "id": "lat-prep-abl-a-ab",
+    "language": "latin",
+    "type": "vocabulary",
+    "title": "Preposition: A / Ab (+ Ablative)",
+    "description": "Always takes the ablative case to express motion away from, origin, or personal agent after a passive verb. 'A' is used before consonants; 'ab' before vowels and 'h'.",
+    "formula": "a/ab + Noun (Ablative)",
+    "examples": [
+      {
+        "text": "Ab urbe venit.",
+        "translation": "He comes from the city."
+      },
+      {
+        "text": "A magistro docetur.",
+        "translation": "He is taught by the teacher."
+      }
+    ],
+    "tags": ["preposition", "ablative"]
+  },
+  {
+    "id": "lat-prep-abl-coram",
+    "language": "latin",
+    "type": "vocabulary",
+    "title": "Preposition: Coram (+ Ablative)",
+    "description": "Always takes the ablative case to express in the presence of, face-to-face with, or publicly before.",
+    "formula": "coram + Noun (Ablative)",
+    "examples": [
+      {
+        "text": "Coram populo loquitur.",
+        "translation": "He speaks in the presence of the people (publicly)."
+      },
+      {
+        "text": "Coram rege stabat.",
+        "translation": "He stood face-to-face with the king."
+      }
+    ],
+    "tags": ["preposition", "ablative"]
+  },
+  {
+    "id": "lat-prep-abl-cum",
+    "language": "latin",
+    "type": "vocabulary",
+    "title": "Preposition: Cum (+ Ablative)",
+    "description": "Always takes the ablative case to express accompaniment (together with) or manner (with).",
+    "formula": "cum + Noun (Ablative)",
+    "examples": [
+      {
+        "text": "Cum amicis ambulat.",
+        "translation": "He walks with friends."
+      },
+      {
+        "text": "Cum cura scribit.",
+        "translation": "He writes with care (carefully)."
+      }
+    ],
+    "tags": ["preposition", "ablative"]
+  },
+  {
+    "id": "lat-prep-abl-de",
+    "language": "latin",
+    "type": "vocabulary",
+    "title": "Preposition: De (+ Ablative)",
+    "description": "Always takes the ablative case to denote motion down from, away from, or concerning/about.",
+    "formula": "de + Noun (Ablative)",
+    "examples": [
+      {
+        "text": "De monte descendit.",
+        "translation": "He descends down from the mountain."
+      },
+      {
+        "text": "De bello libro scripsit.",
+        "translation": "He wrote a book about the war."
+      }
+    ],
+    "tags": ["preposition", "ablative"]
   }
 ]
