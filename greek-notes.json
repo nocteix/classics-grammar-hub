@@ -37,7 +37,7 @@
       }
     ],
     "mnemonic": "ἵνα/ὅπως/ὡς + Subjunctive (Primary) or Optative (Secondary). Negated with μή.",
-    "tags": ["purpose", "subjunctive", "optative"]
+    "tags": ["subjunctive", "optative"]
   },
   {
     "id": "grk-syntax-articular-inf",
@@ -57,7 +57,7 @@
       }
     ],
     "mnemonic": "Neuter article converts an entire verb clause into a declinable noun phrase.",
-    "tags": ["infinitive", "article", "articular"]
+    "tags": ["infinitive"]
   },
   {
     "id": "grk-syntax-dative-means",
@@ -77,7 +77,7 @@
       }
     ],
     "mnemonic": "No preposition needed for tangible tools or means in the Dative.",
-    "tags": ["dative", "means", "instrument"]
+    "tags": ["dative"]
   },
   {
     "id": "grk-syntax-conditional-contrary",
