@@ -80,26 +80,6 @@
     "tags": ["subjunctive"]
   },
   {
-    "id": "lat-syntax-dative-possession",
-    "type": "syntax",
-    "language": "latin",
-    "title": "Dative of Possession",
-    "description": "Used with forms of esse to express ownership. The item owned acts as the nominative subject, and the owner is put into the dative case.",
-    "formula": "Thing Possessed (Nominative) + Form of Sum + Owner (Dative)",
-    "examples": [
-      {
-        "text": "Est mihi liber.",
-        "translation": "There is to me a book (I have a book)."
-      },
-      {
-        "text": "Puellae multi libri sunt.",
-        "translation": "To the girl are many books (The girl has many books)."
-      }
-    ],
-    "mnemonic": "Literal: [Thing] exists to [Person] → Person has Thing.",
-    "tags": ["dative"]
-  },
-  {
     "id": "lat-gen-possession",
     "language": "latin",
     "type": "syntax",
@@ -231,5 +211,120 @@
       }
     ],
     "tags": ["genitive"]
+  },
+  [
+  {
+    "id": "lat-dat-intransitive",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Dative with Intransitive Verbs (Dativus Intransitivus)",
+    "description": "Used as the object of certain intransitive verbs expressing favor, trust, obedience, command, or persuasion (e.g., imperare, parere, credere, favere, nocere).",
+    "formula": "Intransitive Verb + Noun (Dative)",
+    "examples": [
+      {
+        "text": "Imperator militibus imperat.",
+        "translation": "The commander gives orders to the soldiers."
+      },
+      {
+        "text": "Mihi crede.",
+        "translation": "Trust me / Believe me."
+      }
+    ],
+    "tags": ["dative"]
+  },
+  {
+    "id": "lat-dat-transitive",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Dative of Indirect Object with Transitive Verbs",
+    "description": "Used alongside a direct object in the accusative case to mark the person or thing to or for whom something is given, said, or done.",
+    "formula": "Transitive Verb + Accusative (Direct Object) + Dative (Indirect Object)",
+    "examples": [
+      {
+        "text": "Dominus servo librum dat.",
+        "translation": "The master gives a book to the slave."
+      },
+      {
+        "text": "Pater filio fabulam narrat.",
+        "translation": "The father tells a story to his son."
+      }
+    ],
+    "tags": ["dative"]
+  },
+  {
+    "id": "lat-dat-commodi",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Dative of Advantage / Disadvantage (Dativus Commodi / Incommodi)",
+    "description": "Indicates the person or thing for whose benefit (nyttans) or detriment (skadans) an action is performed.",
+    "formula": "Verb + Noun (Dative of Advantage/Disadvantage)",
+    "examples": [
+      {
+        "text": "Non scholae, sed vitae discimus.",
+        "translation": "We learn not for school, but for life."
+      },
+      {
+        "text": "Tibi haec domus aedificatur.",
+        "translation": "This house is built for you."
+      }
+    ],
+    "tags": ["dative"]
+  },
+  {
+    "id": "lat-dat-possession",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Dative of Possession (Dativus Possessivus)",
+    "description": "Used with forms of esse to indicate ownership. The item owned is the subject, while the owner takes the dative case.",
+    "formula": "Thing Possessed (Nominative) + Form of Sum + Owner (Dative)",
+    "examples": [
+      {
+        "text": "Est mihi liber.",
+        "translation": "I have a book (Literally: A book is to me)."
+      },
+      {
+        "text": "Canis puellae est.",
+        "translation": "The girl has a dog."
+      }
+    ],
+    "tags": ["dative"]
+  },
+  {
+    "id": "lat-dat-agent",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Dative of Agent (Dativus Agentis)",
+    "description": "Used to denote the person who must perform an action, required with the Passive Periphrastic (Gerundive + sum).",
+    "formula": "Gerundive + Form of Sum + Agent (Dative)",
+    "examples": [
+      {
+        "text": "Carthago nobis delenda est.",
+        "translation": "Carthage must be destroyed by us (We must destroy Carthage)."
+      },
+      {
+        "text": "Hoc mihi faciendum est.",
+        "translation": "This must be done by me (I must do this)."
+      }
+    ],
+    "tags": ["dative", "gerundive"]
+  },
+  {
+    "id": "lat-dat-purpose",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Dative of Purpose / Predicate (Dativus Finalis)",
+    "description": "Denotes the purpose or intended end result of an action. Often paired with a Dative of Reference in a Double Dative construction.",
+    "formula": "Verb + Noun (Dative of Purpose)",
+    "examples": [
+      {
+        "text": "Locus castris deligitur.",
+        "translation": "A place is chosen for a camp."
+      },
+      {
+        "text": "Hoc est mihi curae.",
+        "translation": "This is a care to me (This serves as a care for me)."
+      }
+    ],
+    "tags": ["dative"]
   }
 ]
