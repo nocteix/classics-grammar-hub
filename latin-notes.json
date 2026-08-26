@@ -325,5 +325,100 @@
       }
     ],
     "tags": ["dative"]
+  },
+  {
+    "id": "lat-acc-direct-object",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Accusative Direct Object with Transitive Verbs (Accusativus Objectivus)",
+    "description": "Used as the direct object of a transitive verb to mark the entity directly affected or produced by the action.",
+    "formula": "Transitive Verb + Noun (Accusative)",
+    "examples": [
+      {
+        "text": "Militem video.",
+        "translation": "I see the soldier."
+      },
+      {
+        "text": "Epistulam scribit.",
+        "translation": "He is writing a letter."
+      }
+    ],
+    "tags": ["accusative", "transitive"]
+  },
+  {
+    "id": "lat-acc-cognate",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Cognate Accusative with Intransitive Verbs (Accusativus Cognatus)",
+    "description": "Used with normally intransitive verbs when the object shares the same root, meaning, or concept as the verb.",
+    "formula": "Intransitive Verb + Related Noun (Accusative)",
+    "examples": [
+      {
+        "text": "Vitam jucundam vivere.",
+        "translation": "To live a pleasant life."
+      },
+      {
+        "text": "Mille pugnas pugnavi.",
+        "translation": "I have fought a thousand fights."
+      }
+    ],
+    "tags": ["accusative", "intransitive"]
+  },
+  {
+    "id": "lat-acc-double",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Two Accusative Objects (Accusativus Duplex - Person & Thing)",
+    "description": "Used with verbs of asking, demanding, teaching, or concealing (e.g., docere, rogare, celare) to take both a person and a thing in the accusative.",
+    "formula": "Verb (Docere/Rogare) + Person (Accusative) + Thing (Accusative)",
+    "examples": [
+      {
+        "text": "Magister pueros grammaticam docet.",
+        "translation": "The teacher teaches the boys grammar."
+      },
+      {
+        "text": "Te sententiam rogo.",
+        "translation": "I ask you your opinion."
+      }
+    ],
+    "tags": ["accusative", "double-object"]
+  },
+  {
+    "id": "lat-acc-predicate",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Objective Predicate / Predicate Accusative (Objektiv Predikatsfyllnad)",
+    "description": "Used with verbs of calling, naming, electing, making, or deeming (e.g., vocare, creare, habere) where a second accusative describes or renames the direct object.",
+    "formula": "Verb + Direct Object (Accusative) + Predicate Noun/Adjective (Accusative)",
+    "examples": [
+      {
+        "text": "Populus Caesarem consulem creavit.",
+        "translation": "The people elected Caesar consul."
+      },
+      {
+        "text": "Te amicum habeo.",
+        "translation": "I consider you a friend."
+      }
+    ],
+    "tags": ["accusative", "predicate", "objektiv-predikatsfyllnad"]
+  },
+  {
+    "id": "lat-acc-extent-space",
+    "language": "latin",
+    "type": "syntax",
+    "title": "Accusative of Extent of Space (Accusativus Spatii)",
+    "description": "Indicates distance, length, or spatial measurement without using a preposition.",
+    "formula": "Number/Adjective + Unit of Measure (Accusative)",
+    "examples": [
+      {
+        "text": "Milia passuum tria progressi sunt.",
+        "translation": "They advanced three miles (three thousand paces)."
+      },
+      {
+        "text": "Fossa decem pedes lata.",
+        "translation": "A trench ten feet wide."
+      }
+    ],
+    "tags": ["accusative", "spatii", "extent"]
   }
 ]
