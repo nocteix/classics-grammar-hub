@@ -1798,5 +1798,25 @@
       }
     ],
     "tags": ["subjunctive"]
+  },
+  {
+    "id": "lat-syntax-gerundive-construction",
+    "type": "syntax",
+    "language": "latin",
+    "title": "Gerundive Construction (Gerundivium)",
+    "description": "A passive verbal adjective (-ndus, -nda, -ndum) that replaces a gerund when an object is present. The noun takes the required case, and the gerundive agrees with it in gender, number, and case.",
+    "formula": "Noun (Case X) + Gerundive (Case X, Gender, Number)",
+    "examples": [
+      {
+        "text": "Ad libros legendos venit.",
+        "translation": "He comes to read books (Literally: for the sake of books to be read)."
+      },
+      {
+        "text": "Ars reipublicae regendae.",
+        "translation": "The art of governing the republic."
+      }
+    ],
+    "mnemonic": "Noun leads case; gerundive agrees in GNC (Gender, Number, Case).",
+    "tags": ["gerundive", "adjective"]
   }
 ]
